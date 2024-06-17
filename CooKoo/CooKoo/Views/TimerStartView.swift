@@ -7,78 +7,92 @@
 
 import SwiftUI
 import Combine
-import ActivityKit
 
 struct TimerStartView: View {
+    @State private var startTime = Date()
     @Binding var selectedKeyword: Keyword
-    @State var totalTime: TimeInterval
-    @State var duration: TimeInterval = 0
-    @State var timer: AnyCancellable?
-    @State var progress: Double = 1.0
-    @State var timeString: String = ""
-    @State var timerCompleted: Bool = false
+    @Binding var totalTime: TimeInterval //고정 값 total duration
+    @State var duration: TimeInterval
+    @State var progress = 1.0
+    @State var interval = TimeInterval()
+    
+    @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    @State private var isTimerRunning = false
     
     var body: some View {
         VStack {
-            Text("Starting timer for \(selectedKeyword)")
-                .font(.largeTitle)
-                .padding()
-            
-            Text(timeString)
-                .font(.system(size: 48, weight: .bold, design: .monospaced))
-                .padding()
-            
-            ZStack {
-                Circle()
-                    .stroke(lineWidth: 20)
-                    .opacity(0.08)
-                    .foregroundColor(.black)
-                    .frame(width: 200, height: 200)
-
-                Circle()
-                    .trim(from: 0.0, to: progress)
-                    .stroke(style: StrokeStyle(lineWidth: 15, lineCap: .round, lineJoin: .round))
-                    .rotationEffect(.degrees(270.0))
-                    .foregroundColor(Color.blue)
-                    .frame(width: 200, height: 200)
-
-                Text(duration.format(using: [.minute, .second]))
-                    .font(.title2.bold())
-                    .foregroundColor(Color.labelColor)
-                    .contentTransition(.numericText())
+            Spacer()
+            if isTimerRunning {
+                CircleTimerView(progress: $progress, duration: $duration)
             }
+            Spacer()
+            
+            HStack(spacing: 24) {
+                Button(action: {
+                    startTimer()
+                }) {
+                    Text("Start")
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                        .padding(.horizontal)
+                }
+                .disabled(isTimerRunning)
+                
+                Button(action: {
+                    stopTimer()
+                }) {
+                    Text("Stop")
+                        .padding()
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                        .padding(.horizontal)
+                }
+                .disabled(!isTimerRunning)
+            }
+            .padding(.top, 20)
         }
         .onAppear {
+            duration = totalTime
             startTimer()
         }
-        .onDisappear {
-            timer?.cancel()
+        .onReceive(timer) { time in
+            if (isTimerRunning) {
+                interval = Date().timeIntervalSince(startTime)
+                duration = totalTime - interval
+                progress = (duration / totalTime)
+
+                // Stop timer when it finishes
+                if duration <= 0 {
+                    stopTimer()
+                } else {
+//                    guard let id = activity?.id else { return }
+//                    LiveActivityManager().updateActivity(
+//                        activity: id,
+//                        duration: duration,
+//                        progress: progress
+//                    )
+                }
+            }
         }
     }
     
-    private func startTimer() {
-        timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect().sink { _ in
-            updateTimer()
-        }
-        _ = LiveActivityManager().startActivity(duration: duration, progress: progress)
+    func startTimer() {
+        startTime = Date()
+        isTimerRunning = true
     }
     
-    private func updateTimer() {
-        guard totalTime > 0 else {
-            timer?.cancel()
-            timer = nil
-            return
-        }
-        
-        totalTime -= 1
-        timeString = formatTime(seconds: Int(totalTime))
-        progress = totalTime / duration
+    func stopTimer() {
+        isTimerRunning = false
+        timer.upstream.connect().cancel()
+        resetTimer()
     }
     
-    private func formatTime(seconds: Int) -> String {
-        let hours = seconds / 3600
-        let minutes = (seconds % 3600) / 60
-        let seconds = seconds % 60
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    func resetTimer() {
+        duration = totalTime
+        progress = 1.0
     }
 }

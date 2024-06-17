@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TimerEndView: View {
-    @StateObject var viewModel = TimerEndViewModel()
 
     var body: some View {
         VStack {
@@ -17,7 +16,7 @@ struct TimerEndView: View {
                 .padding()
 
             Button(action: {
-                viewModel.restartTimer()
+                restartTimer()
             }) {
                 Text("Restart Timer")
                     .padding()
@@ -28,7 +27,7 @@ struct TimerEndView: View {
             .padding()
 
             Button(action: {
-                viewModel.resetTimer()
+                resetTimer()
             }) {
                 Text("Reset")
                     .padding()
@@ -39,6 +38,14 @@ struct TimerEndView: View {
         }
         .navigationTitle("Timer End")
         .padding()
+    }
+    
+    func restartTimer() {
+        print("restartTiemr")
+    }
+    
+    func resetTimer() {
+        print("resetTimer")
     }
 }
 

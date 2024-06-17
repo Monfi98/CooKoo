@@ -19,8 +19,6 @@ struct PlusNumberButton: View {
                 .frame(width: 100, height: 50)
                 .background(Color.green)
                 .foregroundColor(.white)
-                //.cornerRadius(25)
         }
-        //.padding()
     }
 }

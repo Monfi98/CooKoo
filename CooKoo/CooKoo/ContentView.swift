@@ -26,18 +26,14 @@ struct ContentView: View {
     @State private var activeField: TimeField = .none
     
     @State var interval = TimeInterval()
-    //
     @State var totalTime: TimeInterval = 0
 
-    @State var duration: TimeInterval = 2 * 60
-    //
-    
-    //    @State var progress = 1.0
-    //
-    //    @State var isTimerRunning = false
+    @State var duration: TimeInterval = 0
+    @State var progress = 1.0
 
-        @State var activity: Activity<TimerAttributes>?
+    @State var activity: Activity<TimerAttributes>?
     
+    @State private var shouldNavigate = false
     
     enum TimeField {
         case hours
@@ -175,18 +171,19 @@ struct ContentView: View {
                     // MARK: - timerstart button
                     Button(action: {
                         totalTime = calculateTotalTime()
+                        shouldNavigate = true
                     }, label: {
-                        NavigationLink(
-                            destination: TimerStartView(selectedKeyword: $selectedKeyword, totalTime: totalTime),
-                            label: {
-                                Text("Start")
-                                    .padding()
-                                    .background(Color.green)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(8)
-                            }
-                        )
+                        Text("Start")
+                            .padding()
+                            .background(Color.green)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
                     })
+                    .font(Font.headline)
+                    .navigationDestination(isPresented: $shouldNavigate) {
+                        TimerStartView(selectedKeyword: $selectedKeyword, totalTime: $totalTime, duration: duration)
+                    }
+                    
                 }
             }
             .padding()
@@ -195,7 +192,7 @@ struct ContentView: View {
         }
     }
     
-    private func calculateTotalTime() -> Double {
+    private func calculateTotalTime() -> TimeInterval {
         return Double(hours * 3600) + Double(minutes * 60) + Double(seconds)
     }
     
