@@ -28,7 +28,7 @@
 		6785C8EE2C1FEEB0003298DC /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8ED2C1FEEB0003298DC /* LiveActivityManager.swift */; };
 		6785C8F32C1FF195003298DC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8AB2C1F3E10003298DC /* Color.swift */; };
 		6785C8F52C1FF19D003298DC /* TimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8EB2C1FE460003298DC /* TimerAttributes.swift */; };
-		6785C9012C205609003298DC /* timerButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9002C205609003298DC /* timerButtonStyle.swift */; };
+		6785C9012C205609003298DC /* TimerButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9002C205609003298DC /* TimerButtonStyle.swift */; };
 		6785C9062C206A33003298DC /* CircleTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9052C206A33003298DC /* CircleTimerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +79,7 @@
 		6785C8E82C1FE3F5003298DC /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeInterval.swift; path = ../../../../../../../../Documents/TimeInterval.swift; sourceTree = "<group>"; };
 		6785C8EB2C1FE460003298DC /* TimerAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAttributes.swift; sourceTree = "<group>"; };
 		6785C8ED2C1FEEB0003298DC /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
-		6785C9002C205609003298DC /* timerButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerButtonStyle.swift; sourceTree = "<group>"; };
+		6785C9002C205609003298DC /* TimerButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButtonStyle.swift; sourceTree = "<group>"; };
 		6785C9022C20569C003298DC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		6785C9052C206A33003298DC /* CircleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,7 +197,7 @@
 			children = (
 				6785C8AB2C1F3E10003298DC /* Color.swift */,
 				6785C8E82C1FE3F5003298DC /* TimeInterval.swift */,
-				6785C9002C205609003298DC /* timerButtonStyle.swift */,
+				6785C9002C205609003298DC /* TimerButtonStyle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -335,7 +335,7 @@
 				6785C8B42C1F569A003298DC /* TimeFieldView.swift in Sources */,
 				6785C8A82C1F20B5003298DC /* TimerEndView.swift in Sources */,
 				6785C9062C206A33003298DC /* CircleTimerView.swift in Sources */,
-				6785C9012C205609003298DC /* timerButtonStyle.swift in Sources */,
+				6785C9012C205609003298DC /* TimerButtonStyle.swift in Sources */,
 				6785C8892C1F19B6003298DC /* ContentView.swift in Sources */,
 				6785C8AC2C1F3E10003298DC /* Color.swift in Sources */,
 				6785C8A42C1F208E003298DC /* TimerStartView.swift in Sources */,

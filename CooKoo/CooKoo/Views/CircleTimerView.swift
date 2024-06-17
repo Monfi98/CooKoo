@@ -7,31 +7,52 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 struct CircleTimerView: View {
 
     @Binding var progress: Double
     @Binding var duration: TimeInterval
+    @Binding var selectedKeyword: Keyword
 
     var body: some View {
-        ZStack {
-            Circle()
-                .stroke(lineWidth: 20)
-                .opacity(0.08)
-                .foregroundColor(.black)
-                .frame(width: 200, height: 200)
-
-            Circle()
-                .trim(from: 0.0, to: progress)
-                .stroke(style: StrokeStyle(lineWidth: 15, lineCap: .round, lineJoin: .round))
-                .rotationEffect(.degrees(270.0))
-                .foregroundColor(Color.primaryColor)
-                .frame(width: 200, height: 200)
-
-            Text(duration.format(using: [.minute, .second]))
+        
+        VStack{
+            Text(duration.format(using: [.hour ,.minute, .second]))
                 .font(.title2.bold())
                 .foregroundColor(Color.labelColor)
                 .contentTransition(.numericText())
+            ZStack {
+                Circle()
+                    .stroke(lineWidth: 20)
+                    .opacity(0.08)
+                    .foregroundColor(.black)
+                    .frame(width: 200, height: 200)
+
+                Circle()
+                    .trim(from: 0.0, to: progress)
+                    .stroke(style: StrokeStyle(lineWidth: 15, lineCap: .round, lineJoin: .round))
+                    .rotationEffect(.degrees(270.0))
+                    .foregroundColor(Color.primaryColor)
+                    .frame(width: 200, height: 200)
+                
+                Image(systemName: icon(for: selectedKeyword))
+                    .font(.largeTitle)
+                    .foregroundColor(Color.labelColor)
+            }
         }
+
     }
+    private func icon(for keyword: Keyword) -> String {
+         switch keyword {
+         case .cook:
+             return "frying.pan"
+         case .laundry:
+             return "washer.fill"
+         case .exercise:
+             return "figure.cooldown"
+         case .study:
+             return "text.book.closed.fill"
+         }
+     }
 }

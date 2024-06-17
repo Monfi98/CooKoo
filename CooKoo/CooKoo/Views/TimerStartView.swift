@@ -24,7 +24,7 @@ struct TimerStartView: View {
         VStack {
             Spacer()
             if isTimerRunning {
-                CircleTimerView(progress: $progress, duration: $duration)
+                CircleTimerView(progress: $progress, duration: $duration, selectedKeyword: $selectedKeyword)
             }
             Spacer()
             
