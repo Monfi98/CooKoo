@@ -11,7 +11,63 @@
 		6785C8892C1F19B6003298DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8882C1F19B6003298DC /* ContentView.swift */; };
 		6785C88B2C1F19B7003298DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6785C88A2C1F19B7003298DC /* Assets.xcassets */; };
 		6785C88E2C1F19B7003298DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6785C88D2C1F19B7003298DC /* Preview Assets.xcassets */; };
+		6785C89E2C1F1FCE003298DC /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C89D2C1F1FCE003298DC /* Keyword.swift */; };
+		6785C8A42C1F208E003298DC /* TimerStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8A32C1F208E003298DC /* TimerStartView.swift */; };
+		6785C8A62C1F209D003298DC /* TimerStartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8A52C1F209D003298DC /* TimerStartViewModel.swift */; };
+		6785C8A82C1F20B5003298DC /* TimerEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8A72C1F20B5003298DC /* TimerEndView.swift */; };
+		6785C8AA2C1F20E1003298DC /* TimerEndViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8A92C1F20E1003298DC /* TimerEndViewModel.swift */; };
+		6785C8AC2C1F3E10003298DC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8AB2C1F3E10003298DC /* Color.swift */; };
+		6785C8B02C1F5664003298DC /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8AF2C1F5664003298DC /* NumberButton.swift */; };
+		6785C8B22C1F5685003298DC /* PlusNumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8B12C1F5685003298DC /* PlusNumberButton.swift */; };
+		6785C8B42C1F569A003298DC /* TimeFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8B32C1F569A003298DC /* TimeFieldView.swift */; };
+		6785C8BC2C1FE23F003298DC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6785C8BB2C1FE23F003298DC /* WidgetKit.framework */; };
+		6785C8BE2C1FE23F003298DC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6785C8BD2C1FE23F003298DC /* SwiftUI.framework */; };
+		6785C8C12C1FE23F003298DC /* CooKooWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8C02C1FE23F003298DC /* CooKooWidgetBundle.swift */; };
+		6785C8C32C1FE23F003298DC /* CooKooWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8C22C1FE23F003298DC /* CooKooWidgetLiveActivity.swift */; };
+		6785C8C52C1FE23F003298DC /* CooKooWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8C42C1FE23F003298DC /* CooKooWidget.swift */; };
+		6785C8C72C1FE23F003298DC /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8C62C1FE23F003298DC /* AppIntent.swift */; };
+		6785C8C92C1FE241003298DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6785C8C82C1FE241003298DC /* Assets.xcassets */; };
+		6785C8CD2C1FE241003298DC /* CooKooWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6785C8B92C1FE23F003298DC /* CooKooWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6785C8D82C1FE25A003298DC /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6785C8D72C1FE25A003298DC /* UserNotifications.framework */; };
+		6785C8DA2C1FE25A003298DC /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6785C8D92C1FE25A003298DC /* UserNotificationsUI.framework */; };
+		6785C8DD2C1FE25A003298DC /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8DC2C1FE25A003298DC /* NotificationViewController.swift */; };
+		6785C8E02C1FE25A003298DC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6785C8DF2C1FE25A003298DC /* Base */; };
+		6785C8E42C1FE25A003298DC /* CooKooNotification.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6785C8D62C1FE25A003298DC /* CooKooNotification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6785C8E92C1FE3F5003298DC /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8E82C1FE3F5003298DC /* TimeInterval.swift */; };
+		6785C8EC2C1FE460003298DC /* TimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8EB2C1FE460003298DC /* TimerAttributes.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6785C8CB2C1FE241003298DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6785C87B2C1F19B6003298DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6785C8B82C1FE23F003298DC;
+			remoteInfo = CooKooWidgetExtension;
+		};
+		6785C8E22C1FE25A003298DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6785C87B2C1F19B6003298DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6785C8D52C1FE25A003298DC;
+			remoteInfo = CooKooNotification;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6785C8D12C1FE241003298DC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6785C8CD2C1FE241003298DC /* CooKooWidgetExtension.appex in Embed Foundation Extensions */,
+				6785C8E42C1FE25A003298DC /* CooKooNotification.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6785C8832C1F19B6003298DC /* CooKoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CooKoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +75,32 @@
 		6785C8882C1F19B6003298DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6785C88A2C1F19B7003298DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6785C88D2C1F19B7003298DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6785C89D2C1F1FCE003298DC /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
+		6785C8A32C1F208E003298DC /* TimerStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerStartView.swift; sourceTree = "<group>"; };
+		6785C8A52C1F209D003298DC /* TimerStartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerStartViewModel.swift; sourceTree = "<group>"; };
+		6785C8A72C1F20B5003298DC /* TimerEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEndView.swift; sourceTree = "<group>"; };
+		6785C8A92C1F20E1003298DC /* TimerEndViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEndViewModel.swift; sourceTree = "<group>"; };
+		6785C8AB2C1F3E10003298DC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		6785C8AF2C1F5664003298DC /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
+		6785C8B12C1F5685003298DC /* PlusNumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusNumberButton.swift; sourceTree = "<group>"; };
+		6785C8B32C1F569A003298DC /* TimeFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFieldView.swift; sourceTree = "<group>"; };
+		6785C8B92C1FE23F003298DC /* CooKooWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CooKooWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6785C8BB2C1FE23F003298DC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		6785C8BD2C1FE23F003298DC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		6785C8C02C1FE23F003298DC /* CooKooWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooKooWidgetBundle.swift; sourceTree = "<group>"; };
+		6785C8C22C1FE23F003298DC /* CooKooWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooKooWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		6785C8C42C1FE23F003298DC /* CooKooWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooKooWidget.swift; sourceTree = "<group>"; };
+		6785C8C62C1FE23F003298DC /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		6785C8C82C1FE241003298DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6785C8CA2C1FE241003298DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6785C8D62C1FE25A003298DC /* CooKooNotification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CooKooNotification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6785C8D72C1FE25A003298DC /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		6785C8D92C1FE25A003298DC /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		6785C8DC2C1FE25A003298DC /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		6785C8DF2C1FE25A003298DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		6785C8E12C1FE25A003298DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6785C8E82C1FE3F5003298DC /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeInterval.swift; path = ../../../../../../../../Documents/TimeInterval.swift; sourceTree = "<group>"; };
+		6785C8EB2C1FE460003298DC /* TimerAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAttributes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +111,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6785C8B62C1FE23F003298DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6785C8BE2C1FE23F003298DC /* SwiftUI.framework in Frameworks */,
+				6785C8BC2C1FE23F003298DC /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6785C8D32C1FE25A003298DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6785C8DA2C1FE25A003298DC /* UserNotificationsUI.framework in Frameworks */,
+				6785C8D82C1FE25A003298DC /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -36,6 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				6785C8852C1F19B6003298DC /* CooKoo */,
+				6785C8BF2C1FE23F003298DC /* CooKooWidget */,
+				6785C8DB2C1FE25A003298DC /* CooKooNotification */,
+				6785C8BA2C1FE23F003298DC /* Frameworks */,
 				6785C8842C1F19B6003298DC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				6785C8832C1F19B6003298DC /* CooKoo.app */,
+				6785C8B92C1FE23F003298DC /* CooKooWidgetExtension.appex */,
+				6785C8D62C1FE25A003298DC /* CooKooNotification.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,7 +158,12 @@
 			children = (
 				6785C8862C1F19B6003298DC /* CooKooApp.swift */,
 				6785C8882C1F19B6003298DC /* ContentView.swift */,
-				6785C88A2C1F19B7003298DC /* Assets.xcassets */,
+				6785C89A2C1F1D74003298DC /* Resources */,
+				6785C8992C1F1D6E003298DC /* Utilities */,
+				6785C8982C1F1D54003298DC /* Service */,
+				6785C8972C1F1D43003298DC /* Views */,
+				6785C8962C1F1D2F003298DC /* ViewModels */,
+				6785C8942C1F1B72003298DC /* Models */,
 				6785C88C2C1F19B7003298DC /* Preview Content */,
 			);
 			path = CooKoo;
@@ -67,6 +177,110 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		6785C8942C1F1B72003298DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6785C8EB2C1FE460003298DC /* TimerAttributes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6785C8962C1F1D2F003298DC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6785C8A52C1F209D003298DC /* TimerStartViewModel.swift */,
+				6785C8A92C1F20E1003298DC /* TimerEndViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6785C8972C1F1D43003298DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6785C8A32C1F208E003298DC /* TimerStartView.swift */,
+				6785C8A72C1F20B5003298DC /* TimerEndView.swift */,
+				6785C8AF2C1F5664003298DC /* NumberButton.swift */,
+				6785C8B12C1F5685003298DC /* PlusNumberButton.swift */,
+				6785C8B32C1F569A003298DC /* TimeFieldView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6785C8982C1F1D54003298DC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6785C8992C1F1D6E003298DC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6785C89C2C1F1DB2003298DC /* Enums */,
+				6785C89B2C1F1D81003298DC /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6785C89A2C1F1D74003298DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6785C88A2C1F19B7003298DC /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6785C89B2C1F1D81003298DC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6785C8AB2C1F3E10003298DC /* Color.swift */,
+				6785C8E82C1FE3F5003298DC /* TimeInterval.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6785C89C2C1F1DB2003298DC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				6785C89D2C1F1FCE003298DC /* Keyword.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		6785C8BA2C1FE23F003298DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6785C8BB2C1FE23F003298DC /* WidgetKit.framework */,
+				6785C8BD2C1FE23F003298DC /* SwiftUI.framework */,
+				6785C8D72C1FE25A003298DC /* UserNotifications.framework */,
+				6785C8D92C1FE25A003298DC /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6785C8BF2C1FE23F003298DC /* CooKooWidget */ = {
+			isa = PBXGroup;
+			children = (
+				6785C8C02C1FE23F003298DC /* CooKooWidgetBundle.swift */,
+				6785C8C22C1FE23F003298DC /* CooKooWidgetLiveActivity.swift */,
+				6785C8C42C1FE23F003298DC /* CooKooWidget.swift */,
+				6785C8C62C1FE23F003298DC /* AppIntent.swift */,
+				6785C8C82C1FE241003298DC /* Assets.xcassets */,
+				6785C8CA2C1FE241003298DC /* Info.plist */,
+			);
+			path = CooKooWidget;
+			sourceTree = "<group>";
+		};
+		6785C8DB2C1FE25A003298DC /* CooKooNotification */ = {
+			isa = PBXGroup;
+			children = (
+				6785C8DC2C1FE25A003298DC /* NotificationViewController.swift */,
+				6785C8DE2C1FE25A003298DC /* MainInterface.storyboard */,
+				6785C8E12C1FE25A003298DC /* Info.plist */,
+			);
+			path = CooKooNotification;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +291,52 @@
 				6785C87F2C1F19B6003298DC /* Sources */,
 				6785C8802C1F19B6003298DC /* Frameworks */,
 				6785C8812C1F19B6003298DC /* Resources */,
+				6785C8D12C1FE241003298DC /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6785C8CC2C1FE241003298DC /* PBXTargetDependency */,
+				6785C8E32C1FE25A003298DC /* PBXTargetDependency */,
 			);
 			name = CooKoo;
 			productName = CooKoo;
 			productReference = 6785C8832C1F19B6003298DC /* CooKoo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6785C8B82C1FE23F003298DC /* CooKooWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6785C8CE2C1FE241003298DC /* Build configuration list for PBXNativeTarget "CooKooWidgetExtension" */;
+			buildPhases = (
+				6785C8B52C1FE23F003298DC /* Sources */,
+				6785C8B62C1FE23F003298DC /* Frameworks */,
+				6785C8B72C1FE23F003298DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CooKooWidgetExtension;
+			productName = CooKooWidgetExtension;
+			productReference = 6785C8B92C1FE23F003298DC /* CooKooWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		6785C8D52C1FE25A003298DC /* CooKooNotification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6785C8E52C1FE25A003298DC /* Build configuration list for PBXNativeTarget "CooKooNotification" */;
+			buildPhases = (
+				6785C8D22C1FE25A003298DC /* Sources */,
+				6785C8D32C1FE25A003298DC /* Frameworks */,
+				6785C8D42C1FE25A003298DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CooKooNotification;
+			productName = CooKooNotification;
+			productReference = 6785C8D62C1FE25A003298DC /* CooKooNotification.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +349,12 @@
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					6785C8822C1F19B6003298DC = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					6785C8B82C1FE23F003298DC = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					6785C8D52C1FE25A003298DC = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
@@ -116,6 +373,8 @@
 			projectRoot = "";
 			targets = (
 				6785C8822C1F19B6003298DC /* CooKoo */,
+				6785C8B82C1FE23F003298DC /* CooKooWidgetExtension */,
+				6785C8D52C1FE25A003298DC /* CooKooNotification */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +389,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6785C8B72C1FE23F003298DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6785C8C92C1FE241003298DC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6785C8D42C1FE25A003298DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6785C8E02C1FE25A003298DC /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,12 +412,66 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6785C8B42C1F569A003298DC /* TimeFieldView.swift in Sources */,
+				6785C8A82C1F20B5003298DC /* TimerEndView.swift in Sources */,
+				6785C8AA2C1F20E1003298DC /* TimerEndViewModel.swift in Sources */,
 				6785C8892C1F19B6003298DC /* ContentView.swift in Sources */,
+				6785C8AC2C1F3E10003298DC /* Color.swift in Sources */,
+				6785C8A42C1F208E003298DC /* TimerStartView.swift in Sources */,
+				6785C8B22C1F5685003298DC /* PlusNumberButton.swift in Sources */,
+				6785C89E2C1F1FCE003298DC /* Keyword.swift in Sources */,
+				6785C8E92C1FE3F5003298DC /* TimeInterval.swift in Sources */,
 				6785C8872C1F19B6003298DC /* CooKooApp.swift in Sources */,
+				6785C8B02C1F5664003298DC /* NumberButton.swift in Sources */,
+				6785C8EC2C1FE460003298DC /* TimerAttributes.swift in Sources */,
+				6785C8A62C1F209D003298DC /* TimerStartViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6785C8B52C1FE23F003298DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6785C8C52C1FE23F003298DC /* CooKooWidget.swift in Sources */,
+				6785C8C72C1FE23F003298DC /* AppIntent.swift in Sources */,
+				6785C8C32C1FE23F003298DC /* CooKooWidgetLiveActivity.swift in Sources */,
+				6785C8C12C1FE23F003298DC /* CooKooWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6785C8D22C1FE25A003298DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6785C8DD2C1FE25A003298DC /* NotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6785C8CC2C1FE241003298DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6785C8B82C1FE23F003298DC /* CooKooWidgetExtension */;
+			targetProxy = 6785C8CB2C1FE241003298DC /* PBXContainerItemProxy */;
+		};
+		6785C8E32C1FE25A003298DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6785C8D52C1FE25A003298DC /* CooKooNotification */;
+			targetProxy = 6785C8E22C1FE25A003298DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6785C8DE2C1FE25A003298DC /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6785C8DF2C1FE25A003298DC /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6785C88F2C1F19B7003298DC /* Debug */ = {
@@ -267,6 +596,7 @@
 		6785C8922C1F19B7003298DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +626,7 @@
 		6785C8932C1F19B7003298DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -322,6 +653,112 @@
 			};
 			name = Release;
 		};
+		6785C8CF2C1FE241003298DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MT99YM3KLX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CooKooWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CooKooWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = funky.CooKoo.CooKooWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6785C8D02C1FE241003298DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MT99YM3KLX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CooKooWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CooKooWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = funky.CooKoo.CooKooWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6785C8E62C1FE25A003298DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MT99YM3KLX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CooKooNotification/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CooKooNotification;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = funky.CooKoo.CooKooNotification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6785C8E72C1FE25A003298DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MT99YM3KLX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CooKooNotification/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CooKooNotification;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = funky.CooKoo.CooKooNotification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -339,6 +776,24 @@
 			buildConfigurations = (
 				6785C8922C1F19B7003298DC /* Debug */,
 				6785C8932C1F19B7003298DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6785C8CE2C1FE241003298DC /* Build configuration list for PBXNativeTarget "CooKooWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6785C8CF2C1FE241003298DC /* Debug */,
+				6785C8D02C1FE241003298DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6785C8E52C1FE25A003298DC /* Build configuration list for PBXNativeTarget "CooKooNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6785C8E62C1FE25A003298DC /* Debug */,
+				6785C8E72C1FE25A003298DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
