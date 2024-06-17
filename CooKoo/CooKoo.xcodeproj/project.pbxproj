@@ -44,6 +44,7 @@
 		6785C9272C2073A3003298DC /* TimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8EB2C1FE460003298DC /* TimerAttributes.swift */; };
 		6785C9282C2073B1003298DC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8AB2C1F3E10003298DC /* Color.swift */; };
 		6785C92A2C20788B003298DC /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8E82C1FE3F5003298DC /* TimeInterval.swift */; };
+		6785C9342C209DA4003298DC /* CooKooView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9332C209DA4003298DC /* CooKooView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		6785C91A2C207316003298DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6785C91C2C207316003298DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6785C9232C207368003298DC /* WidgetCircleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCircleTimerView.swift; sourceTree = "<group>"; };
+		6785C9332C209DA4003298DC /* CooKooView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooKooView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				6785C8B12C1F5685003298DC /* PlusNumberButton.swift */,
 				6785C8B32C1F569A003298DC /* TimeFieldView.swift */,
 				6785C9052C206A33003298DC /* CircleTimerView.swift */,
+				6785C9332C209DA4003298DC /* CooKooView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6785C9342C209DA4003298DC /* CooKooView.swift in Sources */,
 				6785C8B42C1F569A003298DC /* TimeFieldView.swift in Sources */,
 				6785C9082C2071FE003298DC /* TimeField.swift in Sources */,
 				6785C8A82C1F20B5003298DC /* TimerEndView.swift in Sources */,

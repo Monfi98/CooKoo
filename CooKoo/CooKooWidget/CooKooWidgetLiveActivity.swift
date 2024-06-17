@@ -64,7 +64,7 @@ private func expandedContent(state: TimerAttributes.ContentState) -> DynamicIsla
     }
     DynamicIslandExpandedRegion(.center) {
         VStack {
-            Text(state.duration + " remaining")
+            Text(state.duration)
                 .font(.title)
                 .minimumScaleFactor(0.8)
                 .contentTransition(.numericText())

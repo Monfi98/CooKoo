@@ -21,13 +21,17 @@ struct TimerStartView: View {
     
     @State private var isTimerRunning = false
     
+    @State private var isTimesUp = false
+    
     @State var activity: Activity<TimerAttributes>?
     
     var body: some View {
         VStack {
             Spacer()
-            if isTimerRunning {
+            if(!isTimesUp){
                 CircleTimerView(progress: $progress, duration: $duration, selectedKeyword: $selectedKeyword)
+            } else {
+                CooKooView()
             }
             Spacer()
             
@@ -35,26 +39,31 @@ struct TimerStartView: View {
                 Button(action: {
                     startTimer()
                 }) {
-                    Text("Start")
-                        .padding()
-                        .background(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                        .padding(.horizontal)
+                    if(!isTimesUp){
+                        Text("Start")
+                            .padding()
+                            .background(Color.green)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                            .padding(.horizontal)
+                    }
                 }
-                .disabled(isTimerRunning)
+                //.disabled(isTimerRunning)
                 
                 Button(action: {
                     stopTimer()
                 }) {
-                    Text("Stop")
-                        .padding()
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                        .padding(.horizontal)
+                    if(!isTimesUp){
+                        Text("Stop")
+                            .padding()
+                            .background(Color.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                            .padding(.horizontal)
+                    }
+
                 }
-                .disabled(!isTimerRunning)
+                //.disabled(!isTimerRunning)
             }
             .padding(.top, 20)
         }
@@ -68,9 +77,10 @@ struct TimerStartView: View {
                 duration = totalTime - interval
                 progress = (duration / totalTime)
 
-                // Stop timer when it finishes
                 if duration <= 0 {
-                    stopTimer()
+                    resetTimer()
+                    
+                    isTimesUp = true
                 } else {
                     guard let id = activity?.id else { return }
                     LiveActivityManager().updateActivity(
@@ -86,16 +96,15 @@ struct TimerStartView: View {
     func startTimer() {
         startTime = Date()
         activity = LiveActivityManager().startActivity(duration: duration, progress: progress)
-//        isTimerRunning = true
         isTimerRunning.toggle()
+        duration = totalTime
+        resetTimer()
     }
     
     func stopTimer() {
-//        isTimerRunning = false
         isTimerRunning.toggle()
         timer.upstream.connect().cancel()
         LiveActivityManager().endActivity()
-        resetTimer()
     }
     
     func resetTimer() {
