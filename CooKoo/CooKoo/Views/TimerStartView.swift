@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import ActivityKit
 
 struct TimerStartView: View {
     @State private var startTime = Date()
@@ -19,6 +20,8 @@ struct TimerStartView: View {
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     @State private var isTimerRunning = false
+    
+    @State var activity: Activity<TimerAttributes>?
     
     var body: some View {
         VStack {
@@ -69,12 +72,12 @@ struct TimerStartView: View {
                 if duration <= 0 {
                     stopTimer()
                 } else {
-//                    guard let id = activity?.id else { return }
-//                    LiveActivityManager().updateActivity(
-//                        activity: id,
-//                        duration: duration,
-//                        progress: progress
-//                    )
+                    guard let id = activity?.id else { return }
+                    LiveActivityManager().updateActivity(
+                        activityID: id,
+                        duration: duration,
+                        progress: progress
+                    )
                 }
             }
         }
@@ -82,12 +85,16 @@ struct TimerStartView: View {
     
     func startTimer() {
         startTime = Date()
-        isTimerRunning = true
+        activity = LiveActivityManager().startActivity(duration: duration, progress: progress)
+//        isTimerRunning = true
+        isTimerRunning.toggle()
     }
     
     func stopTimer() {
-        isTimerRunning = false
+//        isTimerRunning = false
+        isTimerRunning.toggle()
         timer.upstream.connect().cancel()
+        LiveActivityManager().endActivity()
         resetTimer()
     }
     

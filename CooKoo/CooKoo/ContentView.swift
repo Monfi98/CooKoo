@@ -35,13 +35,6 @@ struct ContentView: View {
     
     @State private var shouldNavigate = false
     
-    enum TimeField {
-        case hours
-        case minutes
-        case seconds
-        case none
-    }
-    
     var body: some View {
         NavigationStack {
             VStack(alignment: .center) {

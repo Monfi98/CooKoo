@@ -17,12 +17,16 @@ class LiveActivityManager {
 
         do {
             let state = TimerAttributes.ContentState(
-                duration: duration.format(using: [.minute, .second]),
+                duration: duration.format(using: [.hour, .minute, .second]),
                 progress: progress
             )
+            
+            // ActivityContent 객체 생성
+            let content = ActivityContent(state: state, staleDate: nil)
+            
             activity = try Activity<TimerAttributes>.request(
                 attributes: attributes,
-                contentState: state,
+                content: content,  // ActivityContent 객체를 전달
                 pushType: nil
             )
         } catch {
@@ -31,14 +35,16 @@ class LiveActivityManager {
         return activity
     }
 
-    func updateActivity(activity: String, duration: TimeInterval, progress: Double) {
+    func updateActivity(activityID: String, duration: TimeInterval, progress: Double) {
         Task {
             let contentState = TimerAttributes.ContentState(
                 duration: duration.format(using: [.minute, .second]),
                 progress: progress
             )
-            let activity = Activity<TimerAttributes>.activities.first(where: { $0.id == activity })
-            await activity?.update(using: contentState)
+            
+            if let activity = Activity<TimerAttributes>.activities.first(where: { $0.id == activityID }) {
+                await activity.update(using: contentState)
+            }
         }
     }
 
@@ -50,4 +56,3 @@ class LiveActivityManager {
         }
     }
 }
-

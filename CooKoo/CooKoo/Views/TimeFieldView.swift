@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 
 struct TimeFieldView: View {
-    let field: ContentView.TimeField
+    let field: TimeField
     let value: Int
-    @Binding var activeField: ContentView.TimeField
+    @Binding var activeField: TimeField
 
     var body: some View {
         Text(String(format: "%02d", value))

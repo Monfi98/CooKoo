@@ -28,14 +28,12 @@ struct CircleTimerView: View {
                     .opacity(0.08)
                     .foregroundColor(.black)
                     .frame(width: 200, height: 200)
-
                 Circle()
                     .trim(from: 0.0, to: progress)
                     .stroke(style: StrokeStyle(lineWidth: 15, lineCap: .round, lineJoin: .round))
                     .rotationEffect(.degrees(270.0))
                     .foregroundColor(Color.primaryColor)
                     .frame(width: 200, height: 200)
-                
                 Image(systemName: icon(for: selectedKeyword))
                     .font(.largeTitle)
                     .foregroundColor(Color.labelColor)

@@ -30,6 +30,20 @@
 		6785C8F52C1FF19D003298DC /* TimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8EB2C1FE460003298DC /* TimerAttributes.swift */; };
 		6785C9012C205609003298DC /* TimerButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9002C205609003298DC /* TimerButtonStyle.swift */; };
 		6785C9062C206A33003298DC /* CircleTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9052C206A33003298DC /* CircleTimerView.swift */; };
+		6785C9082C2071FE003298DC /* TimeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9072C2071FE003298DC /* TimeField.swift */; };
+		6785C90F2C207314003298DC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6785C90E2C207314003298DC /* WidgetKit.framework */; };
+		6785C9102C207314003298DC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6785C8BD2C1FE23F003298DC /* SwiftUI.framework */; };
+		6785C9132C207314003298DC /* CooKooWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9122C207314003298DC /* CooKooWidgetBundle.swift */; };
+		6785C9152C207314003298DC /* CooKooWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9142C207314003298DC /* CooKooWidgetLiveActivity.swift */; };
+		6785C9172C207314003298DC /* CooKooWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9162C207314003298DC /* CooKooWidget.swift */; };
+		6785C9192C207314003298DC /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9182C207314003298DC /* AppIntent.swift */; };
+		6785C91B2C207316003298DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6785C91A2C207316003298DC /* Assets.xcassets */; };
+		6785C91F2C207316003298DC /* CooKooWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6785C90D2C207314003298DC /* CooKooWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6785C9242C207368003298DC /* WidgetCircleTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9232C207368003298DC /* WidgetCircleTimerView.swift */; };
+		6785C9262C20738D003298DC /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8ED2C1FEEB0003298DC /* LiveActivityManager.swift */; };
+		6785C9272C2073A3003298DC /* TimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8EB2C1FE460003298DC /* TimerAttributes.swift */; };
+		6785C9282C2073B1003298DC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8AB2C1F3E10003298DC /* Color.swift */; };
+		6785C92A2C20788B003298DC /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8E82C1FE3F5003298DC /* TimeInterval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +54,13 @@
 			remoteGlobalIDString = 6785C8D52C1FE25A003298DC;
 			remoteInfo = CooKooNotification;
 		};
+		6785C91D2C207316003298DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6785C87B2C1F19B6003298DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6785C90C2C207314003298DC;
+			remoteInfo = CooKooWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +70,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				6785C91F2C207316003298DC /* CooKooWidgetExtension.appex in Embed Foundation Extensions */,
 				6785C8E42C1FE25A003298DC /* CooKooNotification.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -82,6 +104,16 @@
 		6785C9002C205609003298DC /* TimerButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButtonStyle.swift; sourceTree = "<group>"; };
 		6785C9022C20569C003298DC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		6785C9052C206A33003298DC /* CircleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimerView.swift; sourceTree = "<group>"; };
+		6785C9072C2071FE003298DC /* TimeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeField.swift; sourceTree = "<group>"; };
+		6785C90D2C207314003298DC /* CooKooWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CooKooWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6785C90E2C207314003298DC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		6785C9122C207314003298DC /* CooKooWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooKooWidgetBundle.swift; sourceTree = "<group>"; };
+		6785C9142C207314003298DC /* CooKooWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooKooWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		6785C9162C207314003298DC /* CooKooWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooKooWidget.swift; sourceTree = "<group>"; };
+		6785C9182C207314003298DC /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		6785C91A2C207316003298DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6785C91C2C207316003298DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6785C9232C207368003298DC /* WidgetCircleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCircleTimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +133,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6785C90A2C207314003298DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6785C9102C207314003298DC /* SwiftUI.framework in Frameworks */,
+				6785C90F2C207314003298DC /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -109,6 +150,7 @@
 			children = (
 				6785C8852C1F19B6003298DC /* CooKoo */,
 				6785C8DB2C1FE25A003298DC /* CooKooNotification */,
+				6785C9112C207314003298DC /* CooKooWidget */,
 				6785C8BA2C1FE23F003298DC /* Frameworks */,
 				6785C8842C1F19B6003298DC /* Products */,
 			);
@@ -119,6 +161,7 @@
 			children = (
 				6785C8832C1F19B6003298DC /* CooKoo.app */,
 				6785C8D62C1FE25A003298DC /* CooKooNotification.appex */,
+				6785C90D2C207314003298DC /* CooKooWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				6785C89D2C1F1FCE003298DC /* Keyword.swift */,
+				6785C9072C2071FE003298DC /* TimeField.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -216,6 +260,7 @@
 				6785C8BD2C1FE23F003298DC /* SwiftUI.framework */,
 				6785C8D72C1FE25A003298DC /* UserNotifications.framework */,
 				6785C8D92C1FE25A003298DC /* UserNotificationsUI.framework */,
+				6785C90E2C207314003298DC /* WidgetKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,6 +273,20 @@
 				6785C8E12C1FE25A003298DC /* Info.plist */,
 			);
 			path = CooKooNotification;
+			sourceTree = "<group>";
+		};
+		6785C9112C207314003298DC /* CooKooWidget */ = {
+			isa = PBXGroup;
+			children = (
+				6785C9232C207368003298DC /* WidgetCircleTimerView.swift */,
+				6785C9122C207314003298DC /* CooKooWidgetBundle.swift */,
+				6785C9142C207314003298DC /* CooKooWidgetLiveActivity.swift */,
+				6785C9162C207314003298DC /* CooKooWidget.swift */,
+				6785C9182C207314003298DC /* AppIntent.swift */,
+				6785C91A2C207316003298DC /* Assets.xcassets */,
+				6785C91C2C207316003298DC /* Info.plist */,
+			);
+			path = CooKooWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +305,7 @@
 			);
 			dependencies = (
 				6785C8E32C1FE25A003298DC /* PBXTargetDependency */,
+				6785C91E2C207316003298DC /* PBXTargetDependency */,
 			);
 			name = CooKoo;
 			productName = CooKoo;
@@ -269,6 +329,23 @@
 			productReference = 6785C8D62C1FE25A003298DC /* CooKooNotification.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		6785C90C2C207314003298DC /* CooKooWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6785C9202C207316003298DC /* Build configuration list for PBXNativeTarget "CooKooWidgetExtension" */;
+			buildPhases = (
+				6785C9092C207314003298DC /* Sources */,
+				6785C90A2C207314003298DC /* Frameworks */,
+				6785C90B2C207314003298DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CooKooWidgetExtension;
+			productName = CooKooWidgetExtension;
+			productReference = 6785C90D2C207314003298DC /* CooKooWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -283,6 +360,9 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					6785C8D52C1FE25A003298DC = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					6785C90C2C207314003298DC = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
@@ -303,6 +383,7 @@
 			targets = (
 				6785C8822C1F19B6003298DC /* CooKoo */,
 				6785C8D52C1FE25A003298DC /* CooKooNotification */,
+				6785C90C2C207314003298DC /* CooKooWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -325,6 +406,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6785C90B2C207314003298DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6785C91B2C207316003298DC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -333,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6785C8B42C1F569A003298DC /* TimeFieldView.swift in Sources */,
+				6785C9082C2071FE003298DC /* TimeField.swift in Sources */,
 				6785C8A82C1F20B5003298DC /* TimerEndView.swift in Sources */,
 				6785C9062C206A33003298DC /* CircleTimerView.swift in Sources */,
 				6785C9012C205609003298DC /* TimerButtonStyle.swift in Sources */,
@@ -359,6 +449,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6785C9092C207314003298DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6785C9172C207314003298DC /* CooKooWidget.swift in Sources */,
+				6785C92A2C20788B003298DC /* TimeInterval.swift in Sources */,
+				6785C9192C207314003298DC /* AppIntent.swift in Sources */,
+				6785C9262C20738D003298DC /* LiveActivityManager.swift in Sources */,
+				6785C9152C207314003298DC /* CooKooWidgetLiveActivity.swift in Sources */,
+				6785C9132C207314003298DC /* CooKooWidgetBundle.swift in Sources */,
+				6785C9282C2073B1003298DC /* Color.swift in Sources */,
+				6785C9272C2073A3003298DC /* TimerAttributes.swift in Sources */,
+				6785C9242C207368003298DC /* WidgetCircleTimerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -366,6 +472,11 @@
 			isa = PBXTargetDependency;
 			target = 6785C8D52C1FE25A003298DC /* CooKooNotification */;
 			targetProxy = 6785C8E22C1FE25A003298DC /* PBXContainerItemProxy */;
+		};
+		6785C91E2C207316003298DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6785C90C2C207314003298DC /* CooKooWidgetExtension */;
+			targetProxy = 6785C91D2C207316003298DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -615,6 +726,62 @@
 			};
 			name = Release;
 		};
+		6785C9212C207316003298DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MT99YM3KLX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CooKooWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CooKooWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = funky.CooKoo.CooKooWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6785C9222C207316003298DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MT99YM3KLX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CooKooWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CooKooWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = funky.CooKoo.CooKooWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -641,6 +808,15 @@
 			buildConfigurations = (
 				6785C8E62C1FE25A003298DC /* Debug */,
 				6785C8E72C1FE25A003298DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6785C9202C207316003298DC /* Build configuration list for PBXNativeTarget "CooKooWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6785C9212C207316003298DC /* Debug */,
+				6785C9222C207316003298DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
