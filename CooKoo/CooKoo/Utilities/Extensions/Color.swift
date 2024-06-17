@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    static var backgroundColor: Color = Color(uiColor: UIColor(named: "BackgoundColor")!)
+    static var backgroundColor: Color = Color(uiColor: UIColor.white)
 
-    static var primaryColor: Color = Color(uiColor: UIColor(named: "AccentColor")!)
+    static var primaryColor: Color = Color(uiColor: UIColor.systemMint)
 
-    static var secondaryColor: Color = .yellow
+    static var secondaryColor: Color = Color(uiColor: UIColor.systemMint)
 
-    static var lightColor: Color = Color(uiColor: UIColor.systemGray6)
+    static var lightColor: Color = Color(uiColor: UIColor.systemMint)
 
     static var labelColor: Color = Color(uiColor: UIColor.label)
 
