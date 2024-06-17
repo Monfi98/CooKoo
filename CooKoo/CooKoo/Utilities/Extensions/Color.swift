@@ -12,6 +12,8 @@ extension Color {
     /// Primary color used in app
     static var backgroundColor: Color = Color(uiColor: UIColor(named: "BackgoundColor")!)
 
+    static var primaryColor: Color = Color(uiColor: UIColor(named: "AccentColor")!)
+
     /// Secondary color used in app
     static var secondaryColor: Color = .yellow
 

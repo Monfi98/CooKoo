@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import ActivityKit
 
 struct ContentView: View {
-    @State private var selectedKeyword : Keyword = .cook
+    @State var selectedKeyword : Keyword = .cook
     
     // MARK: 텍스트에 보여지는 시간
     @State private var hours: Int = 0
@@ -24,25 +25,18 @@ struct ContentView: View {
     // MARK: 키패드를 사용해 수정 시 현재 활성화된 부분이 시/분/초 중 어디인지
     @State private var activeField: TimeField = .none
     
-    
-    //
-    //    @State var startTime = Date()
-    //
     @State var interval = TimeInterval()
     //
     @State var totalTime: TimeInterval = 0
-    //
-    //     ===== total Time =======
+
     @State var duration: TimeInterval = 2 * 60
     //
     
     //    @State var progress = 1.0
     //
     //    @State var isTimerRunning = false
-    //
-    //    @State var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
-    //
-    //    @State var activity: Activity<TimerAttributes>?
+
+        @State var activity: Activity<TimerAttributes>?
     
     
     enum TimeField {
@@ -178,25 +172,31 @@ struct ContentView: View {
                     }
                     
                     
-                    let totalTime = (hours * 3600) + (minutes * 60) + seconds
-                    
                     // MARK: - timerstart button
-                    NavigationLink(
-                        destination: TimerStartView(viewModel: TimerStartViewModel(selectedKeyword: selectedKeyword, totalTime: totalTime)),
-                        label: {
-                            Text("Start")
-                                .padding()
-                                .background(Color.green)
-                                .foregroundColor(.white)
-                                .cornerRadius(8)
-                        }
-                    )
+                    Button(action: {
+                        totalTime = calculateTotalTime()
+                    }, label: {
+                        NavigationLink(
+                            destination: TimerStartView(selectedKeyword: $selectedKeyword, totalTime: totalTime),
+                            label: {
+                                Text("Start")
+                                    .padding()
+                                    .background(Color.green)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(8)
+                            }
+                        )
+                    })
                 }
             }
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.backgroundColor)
         }
+    }
+    
+    private func calculateTotalTime() -> Double {
+        return Double(hours * 3600) + Double(minutes * 60) + Double(seconds)
     }
     
     // MARK: - 각 숫자모양 키패드 누를 때 호출되는 함수
@@ -323,7 +323,7 @@ struct ContentView: View {
         minutes = max(0, min(minutes, 59))
         
     }
-    
+
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

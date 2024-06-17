@@ -16,5 +16,5 @@ struct TimerAttributes: ActivityAttributes {
         var progress: Double
     }
 
-//    var name: String
+    var name: String
 }
