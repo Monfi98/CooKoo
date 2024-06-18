@@ -65,7 +65,7 @@ struct ContentView: View {
                     
                     KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .laundry, keywordImage: "washer.fill", action: {selectedKeyword = .laundry}, widthValue: 30, heightValue: 30)
                 }
-                .padding(.bottom,45)
+                .padding(.bottom,40)
                 
                 // MARK: - Timer 부분
                 HStack{
@@ -99,7 +99,6 @@ struct ContentView: View {
                         PlusNumberButton(number: "+ 10m", action: { self.addMinutes(10)})
                         PlusNumberButton(number: "+ 5m", action: { self.addMinutes(5)})
                         PlusNumberButton(number: "+ 10s", action: { self.addSeconds(10)})
-                        
                     }
                     
                     VStack(spacing: 5) {
@@ -121,7 +120,7 @@ struct ContentView: View {
                             NumberButton(number: "9", action: { self.appendInput("9") })
                         }
                         
-                        HStack(spacing: 20) {
+                        HStack(spacing: 15) {
                             Button(action: {
                                 resetAll()
                             }) {
@@ -146,7 +145,8 @@ struct ContentView: View {
                             .padding()
                         }
                     }
-                    .padding(10)
+                    .padding(.top, 15)
+                    .padding(.bottom, 5)
                     
                     
                     // MARK: - timerstart button
@@ -156,7 +156,7 @@ struct ContentView: View {
                     }, label: {
                         Text("Start")
                             .font(.title2)
-                            .frame(width: 350, height: 64)
+                            .frame(width: 350, height: 60)
                             .background(Color("AccentColor"))
                             .foregroundColor(Color("CooKooWhite"))
                             .cornerRadius(12)
