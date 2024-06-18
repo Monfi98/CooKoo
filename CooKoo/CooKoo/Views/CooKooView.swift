@@ -12,36 +12,36 @@ import Combine
 struct CooKooView: View {
 
     var body: some View {
-        
-        VStack{
+        VStack(alignment:.center, spacing: 30){
             Text("Coo - Koo !")
-                .font(.title2.bold())
-                .foregroundColor(Color.labelColor)
+                .padding(.top, 35)
+                .padding(.bottom, 20)
+                //.font(.largeTitle)
+                .font(Font.system(size: 35, weight: .heavy))
+                .tracking(2) // 자간
+                .foregroundStyle(Color("CooKooBlack"))
+                .contentTransition(.numericText())
             ZStack {
                 Circle()
                     .stroke(lineWidth: 20)
                     .opacity(0.08)
                     .foregroundColor(.black)
-                    .frame(width: 300, height: 300)
+                    .frame(width: 330, height: 330)
+                    .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
                 Circle()
                     .trim(from: 0.0, to: 1.0)
                     .stroke(style: StrokeStyle(lineWidth: 15, lineCap: .round, lineJoin: .round))
                     .rotationEffect(.degrees(270.0))
-                    .foregroundColor(Color.primaryColor)
-                    .frame(width: 300, height: 300)
+                    .foregroundColor(Color("AccentColor"))
+                    .frame(width: 330, height: 330)
                 Image("cookoo")
                     .resizable()
-                    .frame(width: 100, height: 100, alignment: .center)
+                    .frame(width: 200, height: 200, alignment: .center)
             }
-            Button(action: {
-                print("fin")
-            }, label: {
-                Text("restart")
-                    .padding()
-                    .foregroundColor(.black)
-                    .cornerRadius(8)
-            })
+            .padding(.vertical, 20)
         }
-
+        .padding(.vertical, 20)
+        .padding(.horizontal, 10)
+    
     }
 }

@@ -97,7 +97,7 @@ struct ContentView: View {
                     HStack {
                         PlusNumberButton(number: "+ 1h", action: { self.addHours(1)})
                         PlusNumberButton(number: "+ 10m", action: { self.addMinutes(10)})
-                        PlusNumberButton(number: "+ 5m", action: { self.addMinutes(5)})
+                        PlusNumberButton(number: "+ 1m", action: { self.addMinutes(1)})
                         PlusNumberButton(number: "+ 10s", action: { self.addSeconds(10)})
                     }
                     
