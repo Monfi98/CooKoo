@@ -44,7 +44,7 @@ struct ContentView: View {
                     .foregroundColor(Color.black)
                 Divider()
                     .foregroundColor(Color("CooKooBlack"))
-                    .padding(.bottom,2)
+                    .padding(.bottom,10)
                 
                 
                 // MARK: - 키워드 선택
@@ -55,106 +55,82 @@ struct ContentView: View {
                         .foregroundColor(Color("CooKooBlack"))
                     Spacer()
                 }
-                .padding(.top,3)
+                .padding(.bottom,5)
                 HStack{
-                    Button(action: {
-                        selectedKeyword = .cook
-                    }, label: {
-                        Image(systemName: "frying.pan")
-                            .frame(width:50, height:24)
-                            .padding()
-                            .background(selectedKeyword == .cook ? Color.accentColor : Color("CooKooSemiBlack"))
-                            .foregroundColor(Color("AccentColor"))
-                            .cornerRadius(12)
-
-                    })
-                    Button(action: {
-                        selectedKeyword = .study
-                    }, label: {
-                        Text("study")
-                            .padding()
-                            .background(selectedKeyword == .study ? Color.blue : Color.gray)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    })
-                    Button(action: {
-                        selectedKeyword = .exercise
-                    }, label: {
-                        Text("exercise")
-                            .padding()
-                            .background(selectedKeyword == .exercise ? Color.blue : Color.gray)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    })
-                    Button(action: {
-                        selectedKeyword = .laundry
-                    }, label: {
-                        Text("laundry")
-                            .padding()
-                            .background(selectedKeyword == .laundry ? Color.blue : Color.gray)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    })
+                    
+                    KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .cook, keywordImage: "frying.pan", action: {selectedKeyword = .cook}, widthValue: 40, heightValue: 28)
+                    KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .study, keywordImage: "text.book.closed.fill", action: {selectedKeyword = .study}, widthValue: 24, heightValue: 30)
+                    
+                    KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .exercise, keywordImage: "figure.cooldown", action: {selectedKeyword = .exercise}, widthValue: 22, heightValue: 30)
+                    
+                    KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .laundry, keywordImage: "washer.fill", action: {selectedKeyword = .laundry}, widthValue: 30, heightValue: 30)
                 }
+                .padding(.bottom,45)
                 
                 // MARK: - Timer 부분
                 HStack{
                     Text("Timer")
+                        .font(Font.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color("CooKooBlack"))
                     Spacer()
                 }
-                
+                Divider()
+                    .foregroundColor(Color("CooKooBlack"))
+                    .padding(.bottom,2)
                 
                 VStack{
                     HStack {
                         TimeFieldView(field: .hours, value: hours, activeField: $activeField)
                         Text(":")
-                            .padding()
+                            .padding(10)
                         TimeFieldView(field: .minutes, value: minutes, activeField: $activeField)
                         Text(":")
-                            .padding()
+                            .padding(10)
                         TimeFieldView(field: .seconds, value: seconds, activeField: $activeField)
-                        TimeFieldView(field: .none, value: 0, activeField: $activeField)
-                            .hidden()
                     }
+                    .padding(.vertical,20)
                     
                     
                     
                     // MARK: - +1분
                     HStack {
-                        PlusNumberButton(number: "+1h", action: { self.addHours(1)})
-                        PlusNumberButton(number: "+10m", action: { self.addMinutes(10)})
-                        PlusNumberButton(number: "+10s", action: { self.addSeconds(10)})
+                        PlusNumberButton(number: "+ 1h", action: { self.addHours(1)})
+                        PlusNumberButton(number: "+ 10m", action: { self.addMinutes(10)})
+                        PlusNumberButton(number: "+ 5m", action: { self.addMinutes(5)})
+                        PlusNumberButton(number: "+ 10s", action: { self.addSeconds(10)})
                         
                     }
                     
-                    VStack(spacing: 10) {
-                        HStack {
+                    VStack(spacing: 5) {
+                        HStack(spacing: 15) {
                             NumberButton(number: "1", action: { self.appendInput("1") })
                             NumberButton(number: "2", action: { self.appendInput("2") })
                             NumberButton(number: "3", action: { self.appendInput("3") })
                         }
                         
-                        HStack {
+                        HStack(spacing: 15) {
                             NumberButton(number: "4", action: { self.appendInput("4") })
                             NumberButton(number: "5", action: { self.appendInput("5") })
                             NumberButton(number: "6", action: { self.appendInput("6") })
                         }
                         
-                        HStack {
+                        HStack(spacing: 15) {
                             NumberButton(number: "7", action: { self.appendInput("7") })
                             NumberButton(number: "8", action: { self.appendInput("8") })
                             NumberButton(number: "9", action: { self.appendInput("9") })
                         }
                         
-                        HStack {
+                        HStack(spacing: 20) {
                             Button(action: {
                                 resetAll()
                             }) {
                                 Text("reset")
-                                    .padding()
-                                    .frame(width: 80, height: 50)
-                                    .background(Color.background)
-                                    .foregroundColor(.black)
+                                    .padding(8)
+                                    .font(.system(size: 23))
+                                    .frame(width: 80, height: 30)
+                                    .foregroundColor(Color("CooKooBlack"))
+
                             }
                             .padding()
                             NumberButton(number: "0", action: { self.appendInput("0") })
@@ -162,15 +138,15 @@ struct ContentView: View {
                                 eraseInput()
                             }) {
                                 Image(systemName: "delete.backward")
-                                    .font(.system(size: 16)) // 아이콘 크기 조정
-                                    .padding()
-                                    .frame(width: 80, height: 50)
-                                    .background(Color("Background"))
-                                    .foregroundColor(.black)
+                                    .padding(8)
+                                    .font(.system(size: 23))
+                                    .frame(width: 80, height: 30)
+                                    .foregroundColor(Color("CooKooBlack"))
                             }
                             .padding()
                         }
                     }
+                    .padding(10)
                     
                     
                     // MARK: - timerstart button
@@ -179,20 +155,22 @@ struct ContentView: View {
                         shouldNavigate = true
                     }, label: {
                         Text("Start")
-                            .padding()
-                            .background(Color.green)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
+                            .font(.title2)
+                            .frame(width: 350, height: 64)
+                            .background(Color("AccentColor"))
+                            .foregroundColor(Color("CooKooWhite"))
+                            .cornerRadius(12)
+                            .opacity(totalTime == 0 ? 0.5 : 1.0)
                     })
+                    // 총 시간 0 일 때는 비활성화
+                    .disabled(totalTime == 0)
                     .font(Font.headline)
                     .navigationDestination(isPresented: $shouldNavigate) {
                         TimerStartView(selectedKeyword: $selectedKeyword, totalTime: $totalTime, duration: duration)
                     }
-                    
                 }
             }
-            .padding()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(16)
             .background(Color.background)
         }
     }
@@ -203,8 +181,7 @@ struct ContentView: View {
     
     // MARK: - 각 숫자모양 키패드 누를 때 호출되는 함수
     private func appendInput(_ digit: String) {
-        //        누르자마자 숫자 지우기
-        //        두 번 입력했으면 none으로 바꾸기
+        // TODO: 60 이상 수 입력하면 진동이랑 흔들리면서 빨간색으로 알림 띄우기
         switch activeField {
         case .hours:
             inputValue += digit
@@ -259,6 +236,7 @@ struct ContentView: View {
         inputMinutes = ""
         inputSeconds = ""
         inputValue = ""
+        totalTime = calculateTotalTime()
     }
     
     // MARK: - 초 분 시를 받아서 hours, minutes, seconds에 더하는 함수
@@ -323,7 +301,7 @@ struct ContentView: View {
         }
         seconds = max(0, min(seconds, 59))
         minutes = max(0, min(minutes, 59))
-        
+        totalTime = calculateTotalTime()
     }
 
 }

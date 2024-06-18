@@ -11,14 +11,27 @@ import SwiftUI
 struct PlusNumberButton: View {
     let number: String
     let action: () -> Void
-
+    
     var body: some View {
         Button(action: action) {
-            Text(number)
-                .padding()
-                .frame(width: 100, height: 50)
-                .background(Color.green)
-                .foregroundColor(.white)
+            
+            ZStack(alignment: .center){
+                RoundedRectangle(cornerRadius: 12)
+                    .foregroundColor(Color("CooKooWhite"))
+                    .frame(width: 75, height: 32)
+                    .overlay(
+                        Group {
+                            RoundedRectangle(cornerRadius: 26)
+                                .stroke(Color("CooKooGray"), lineWidth: 1)
+                        }
+                    )
+                Text(number)
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color("CooKooGray"))
+            }
         }
     }
 }
+
+
