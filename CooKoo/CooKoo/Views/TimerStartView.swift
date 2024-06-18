@@ -43,10 +43,23 @@ struct TimerStartView: View {
             if(!isTimesUp){
                 HStack(spacing: 24) {
                     Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                            Text("Back")
+                                .font(.title2)
+                                .frame(width: 148, height: 60)
+                                .background(Color("AccentColor"))
+                                .foregroundColor(Color("CooKooWhite"))
+                                .cornerRadius(12)
+
+                    }
+                    .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
+                    Button(action: {
                         if isTimerRunning {
                             stopTimer()
                         } else {
-                            restartTimer()
+                            // TODO: - 여기 동작 이상함
+                            //restartTimer()
                         }
                     }) {
                             Text(isTimerRunning ? "Stop" : "Restart")
@@ -57,26 +70,16 @@ struct TimerStartView: View {
                                 .cornerRadius(12)
                     }
                     .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                            Text("Reset")
-                                .font(.title2)
-                                .frame(width: 148, height: 60)
-                                .background(Color("AccentColor"))
-                                .foregroundColor(Color("CooKooWhite"))
-                                .cornerRadius(12)
-
-                    }
-                    .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
+                    
                 }
             }
 
             else {
                 Button(action: {
+                    // TODO: - 방금 돌렸던 시간 다시 타이머 시작하도록 구현해야함
                     startTimer()
                 }) {
-                    Text("Restart")
+                    Text("Start Again")
                         .font(.title2)
                         .frame(width: 350, height: 60)
                         .background(Color("AccentColor"))
