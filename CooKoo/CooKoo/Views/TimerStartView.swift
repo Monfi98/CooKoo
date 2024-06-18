@@ -131,8 +131,11 @@ struct TimerStartView: View {
         
         content.sound = UNNotificationSound.defaultRingtone
         
+        // MARK: 커스텀 들어가는 부분
+        content.categoryIdentifier = "customNotificationCategory"
+        
         // 트리거: 0초 후에 알림 발송
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         
         // 요청 생성
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
