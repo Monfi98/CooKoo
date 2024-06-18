@@ -34,18 +34,20 @@ struct LiveActivityContent: View {
             Image("cookoo")
                 .resizable()
                 .frame(width: 100, height: 90)
-                .padding(.leading, 10)
+                .padding(.leading, 5)
                 .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
             
             Spacer()
             VStack {
                 Text("CooKoo")
+                    .padding()
                     .font(.headline)
                     .minimumScaleFactor(0.8)
                     .contentTransition(.numericText())
                     .foregroundColor(Color("AccentColor"))
                 Text(state.duration)
-                    .font(Font.system(size: 45, weight: .bold))
+                    .padding()
+                    .font(Font.system(size: 40, weight: .bold))
                     .minimumScaleFactor(0.8)
                     .contentTransition(.numericText())
             }
@@ -81,7 +83,7 @@ private func expandedContent(state: TimerAttributes.ContentState) -> DynamicIsla
     DynamicIslandExpandedRegion(.leading) {
         Image(systemName: "timer.circle.fill")
             .resizable()
-            .frame(width: 80.0, height: 80.0)
+            .frame(width: 40.0, height: 40.0)
             .foregroundColor(Color("AccentColor"))
             .padding(.vertical, 20)
             .padding(.leading, 20)
@@ -96,14 +98,14 @@ private func expandedContent(state: TimerAttributes.ContentState) -> DynamicIsla
                     .padding(.bottom, 0.5)
 
             Text(state.duration)
-                .font(Font.system(size: 45, weight: .bold))
+                .font(Font.system(size: 40, weight: .bold))
                 .minimumScaleFactor(0.8)
                 .contentTransition(.numericText())
         }
         .id(state)
         .transition(.identity)
         .padding(.vertical, 20)
-        .padding(.trailing, 20)
+        .padding(.trailing, 10)
     }
 }
 
