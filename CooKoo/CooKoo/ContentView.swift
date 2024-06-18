@@ -199,12 +199,14 @@ struct ContentView: View {
                 minutes = value
                 inputMinutes = inputValue
             }
+            normalizeTime()
         case .seconds:
             inputValue = inputSeconds + digit
             if let value = Int(inputValue), value <= 59 {
                 seconds = value
                 inputSeconds = inputValue
             }
+            normalizeTime()
         case .none:
             print("none")
         }
@@ -226,6 +228,7 @@ struct ContentView: View {
             print("dd")
         }
         inputValue = ""
+        normalizeTime()
     }
     
     private func resetAll() {
