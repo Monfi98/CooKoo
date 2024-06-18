@@ -9,7 +9,15 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    static var backgroundColor: Color = Color(uiColor: UIColor.white)
+    // 원하는 변수 : assest 이름
+    
+    static var backgroundColor: Color = Color("Background")
+    
+    static var accentColor: Color = Color("AccentColor")
+    
+    static var semiBlackColor: Color = Color("CooKooSemiBlack")
+    
+    //static var cooKooBlack: Color = Color(uiColor: UIColor(named: "CooKooBlack")!)
 
     static var primaryColor: Color = Color(uiColor: UIColor.systemMint)
 
@@ -20,4 +28,6 @@ extension Color {
     static var labelColor: Color = Color(uiColor: UIColor.label)
 
     static var listRowColor: Color = Color(uiColor: UIColor.secondarySystemGroupedBackground)
+    
+    
 }

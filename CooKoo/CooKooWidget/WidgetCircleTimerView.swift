@@ -24,7 +24,7 @@ struct WidgetCircleTimerView: View {
                 .trim(from: 0.0, to: progress)
                 .stroke(style: StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
                 .rotationEffect(.degrees(270.0))
-                .foregroundColor(Color.primaryColor)
+                .foregroundColor(Color("AccentColor"))
                 .frame(width: 36, height: 36)
         }
     }

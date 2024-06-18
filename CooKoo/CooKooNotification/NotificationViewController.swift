@@ -10,8 +10,6 @@ import UserNotifications
 import UserNotificationsUI
 
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
-
-    @IBOutlet var label: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +17,10 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     }
     
     func didReceive(_ notification: UNNotification) {
-        self.label?.text = notification.request.content.body
+        // Configure the view with the notification's content
+        let content = notification.request.content
+        
+        // 예: 알림 내용을 레이블에 표시
+        // myLabel.text = content.body
     }
-
 }

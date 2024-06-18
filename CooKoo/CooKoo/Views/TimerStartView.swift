@@ -63,7 +63,6 @@ struct TimerStartView: View {
                     }
 
                 }
-                //.disabled(!isTimerRunning)
             }
             .padding(.top, 20)
         }
@@ -79,8 +78,11 @@ struct TimerStartView: View {
 
                 if duration <= 0 {
                     resetTimer()
-                    
+                    if(!isTimesUp){
+                        sendNotification()
+                    }
                     isTimesUp = true
+                    
                 } else {
                     guard let id = activity?.id else { return }
                     LiveActivityManager().updateActivity(
@@ -110,5 +112,36 @@ struct TimerStartView: View {
     func resetTimer() {
         duration = totalTime
         progress = 1.0
+    }
+    func sendNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Coo-Koo!"
+        
+        // selectedKeyword에 따라 다른 문구 설정
+        switch selectedKeyword {
+        case .cook:
+            content.body = "Great job staying focused on your work!"
+        case .study:
+            content.body = "Great job staying focused!"
+        case .exercise:
+            content.body = "Great job on your workout!"
+        case .laundry:
+            content.body = "Laundry is done!"
+        }
+        
+        content.sound = UNNotificationSound.defaultRingtone
+        
+        // 트리거: 0초 후에 알림 발송
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0, repeats: false)
+        
+        // 요청 생성
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        // 요청을 알림 센터에 추가
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error adding notification: \(error)")
+            }
+        }
     }
 }

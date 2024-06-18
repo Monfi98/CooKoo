@@ -38,23 +38,35 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .center) {
-                Text("CooKoo")
+                Text("Cookoo")
+                    .font(Font.title)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(Color.black)
+                Divider()
+                    .foregroundColor(Color("CooKooBlack"))
+                    .padding(.bottom,2)
                 
                 
                 // MARK: - 키워드 선택
                 HStack{
                     Text("Keyword")
+                        .font(Font.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color("CooKooBlack"))
                     Spacer()
                 }
+                .padding(.top,3)
                 HStack{
                     Button(action: {
                         selectedKeyword = .cook
                     }, label: {
-                        Text("cook")
+                        Image(systemName: "frying.pan")
+                            .frame(width:50, height:24)
                             .padding()
-                            .background(selectedKeyword == .cook ? Color.blue : Color.gray)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
+                            .background(selectedKeyword == .cook ? Color.accentColor : Color("CooKooSemiBlack"))
+                            .foregroundColor(Color("AccentColor"))
+                            .cornerRadius(12)
+
                     })
                     Button(action: {
                         selectedKeyword = .study
@@ -141,7 +153,7 @@ struct ContentView: View {
                                 Text("reset")
                                     .padding()
                                     .frame(width: 80, height: 50)
-                                    .background(Color.backgroundColor)
+                                    .background(Color.background)
                                     .foregroundColor(.black)
                             }
                             .padding()
@@ -153,7 +165,7 @@ struct ContentView: View {
                                     .font(.system(size: 16)) // 아이콘 크기 조정
                                     .padding()
                                     .frame(width: 80, height: 50)
-                                    .background(Color.backgroundColor)
+                                    .background(Color("Background"))
                                     .foregroundColor(.black)
                             }
                             .padding()
@@ -181,7 +193,7 @@ struct ContentView: View {
             }
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.backgroundColor)
+            .background(Color.background)
         }
     }
     
