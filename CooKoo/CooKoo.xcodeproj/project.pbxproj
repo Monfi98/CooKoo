@@ -44,6 +44,7 @@
 		6785C9282C2073B1003298DC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8AB2C1F3E10003298DC /* Color.swift */; };
 		6785C9342C209DA4003298DC /* CooKooView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9332C209DA4003298DC /* CooKooView.swift */; };
 		6785C93A2C2158F9003298DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9392C2158F9003298DC /* AppDelegate.swift */; };
+		6785C93C2C21718F003298DC /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C93B2C21718F003298DC /* TimeInterval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		6785C9372C21585B003298DC /* CooKoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CooKoo.entitlements; sourceTree = "<group>"; };
 		6785C9382C215888003298DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6785C9392C2158F9003298DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6785C93B2C21718F003298DC /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			children = (
 				6785C8AB2C1F3E10003298DC /* Color.swift */,
 				6785C9002C205609003298DC /* TimerButtonStyle.swift */,
+				6785C93B2C21718F003298DC /* TimeInterval.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				6785C9342C209DA4003298DC /* CooKooView.swift in Sources */,
 				6785C8B42C1F569A003298DC /* TimeFieldView.swift in Sources */,
 				6785C9082C2071FE003298DC /* TimeField.swift in Sources */,
+				6785C93C2C21718F003298DC /* TimeInterval.swift in Sources */,
 				6785C8A82C1F20B5003298DC /* TimerEndView.swift in Sources */,
 				6785C9062C206A33003298DC /* CircleTimerView.swift in Sources */,
 				6785C9012C205609003298DC /* TimerButtonStyle.swift in Sources */,
