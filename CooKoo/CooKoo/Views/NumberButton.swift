@@ -17,7 +17,6 @@ struct NumberButton: View {
             Text(number)
                 .padding()
                 .frame(width: 80, height: 50)
-                .background(Color.backgroundColor)
                 .foregroundColor(.black)
                 .cornerRadius(25)
         }

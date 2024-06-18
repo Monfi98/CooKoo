@@ -120,6 +120,7 @@
 		6785C9382C215888003298DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6785C9392C2158F9003298DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6785C93B2C21718F003298DC /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
+		6785C93F2C21A00C003298DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,6 +499,7 @@
 			children = (
 				6785C8DF2C1FE25A003298DC /* Base */,
 				6785C9022C20569C003298DC /* ko */,
+				6785C93F2C21A00C003298DC /* en */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";

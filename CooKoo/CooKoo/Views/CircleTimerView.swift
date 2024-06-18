@@ -20,7 +20,7 @@ struct CircleTimerView: View {
         VStack{
             Text(duration.format(using: [.hour ,.minute, .second]))
                 .font(.title2.bold())
-                .foregroundColor(Color.labelColor)
+                .foregroundColor(Color("AccentColor"))
                 .contentTransition(.numericText())
             ZStack {
                 Circle()
