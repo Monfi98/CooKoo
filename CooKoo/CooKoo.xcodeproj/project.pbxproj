@@ -46,6 +46,7 @@
 		6785C93C2C21718F003298DC /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C93B2C21718F003298DC /* TimeInterval.swift */; };
 		6785C93D2C2171BD003298DC /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C93B2C21718F003298DC /* TimeInterval.swift */; };
 		6785C9422C21BB84003298DC /* KeywordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9412C21BB84003298DC /* KeywordButton.swift */; };
+		6785C9442C220159003298DC /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C89D2C1F1FCE003298DC /* Keyword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -467,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6785C9172C207314003298DC /* CooKooWidget.swift in Sources */,
+				6785C9442C220159003298DC /* Keyword.swift in Sources */,
 				6785C93D2C2171BD003298DC /* TimeInterval.swift in Sources */,
 				6785C9192C207314003298DC /* AppIntent.swift in Sources */,
 				6785C9262C20738D003298DC /* LiveActivityManager.swift in Sources */,
