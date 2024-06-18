@@ -13,7 +13,6 @@
 		6785C88E2C1F19B7003298DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6785C88D2C1F19B7003298DC /* Preview Assets.xcassets */; };
 		6785C89E2C1F1FCE003298DC /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C89D2C1F1FCE003298DC /* Keyword.swift */; };
 		6785C8A42C1F208E003298DC /* TimerStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8A32C1F208E003298DC /* TimerStartView.swift */; };
-		6785C8A82C1F20B5003298DC /* TimerEndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8A72C1F20B5003298DC /* TimerEndView.swift */; };
 		6785C8AC2C1F3E10003298DC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8AB2C1F3E10003298DC /* Color.swift */; };
 		6785C8B02C1F5664003298DC /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8AF2C1F5664003298DC /* NumberButton.swift */; };
 		6785C8B22C1F5685003298DC /* PlusNumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8B12C1F5685003298DC /* PlusNumberButton.swift */; };
@@ -46,6 +45,7 @@
 		6785C93A2C2158F9003298DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9392C2158F9003298DC /* AppDelegate.swift */; };
 		6785C93C2C21718F003298DC /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C93B2C21718F003298DC /* TimeInterval.swift */; };
 		6785C93D2C2171BD003298DC /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C93B2C21718F003298DC /* TimeInterval.swift */; };
+		6785C9422C21BB84003298DC /* KeywordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9412C21BB84003298DC /* KeywordButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +88,6 @@
 		6785C88D2C1F19B7003298DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6785C89D2C1F1FCE003298DC /* Keyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyword.swift; sourceTree = "<group>"; };
 		6785C8A32C1F208E003298DC /* TimerStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerStartView.swift; sourceTree = "<group>"; };
-		6785C8A72C1F20B5003298DC /* TimerEndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEndView.swift; sourceTree = "<group>"; };
 		6785C8AB2C1F3E10003298DC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6785C8AF2C1F5664003298DC /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
 		6785C8B12C1F5685003298DC /* PlusNumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusNumberButton.swift; sourceTree = "<group>"; };
@@ -104,7 +103,7 @@
 		6785C8ED2C1FEEB0003298DC /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
 		6785C9002C205609003298DC /* TimerButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButtonStyle.swift; sourceTree = "<group>"; };
 		6785C9022C20569C003298DC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainInterface.strings; sourceTree = "<group>"; };
-		6785C9052C206A33003298DC /* CircleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimerView.swift; sourceTree = "<group>"; };
+		6785C9052C206A33003298DC /* CircleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimerView.swift; sourceTree = "<group>"; tabWidth = 6; };
 		6785C9072C2071FE003298DC /* TimeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeField.swift; sourceTree = "<group>"; };
 		6785C90D2C207314003298DC /* CooKooWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CooKooWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6785C90E2C207314003298DC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -121,6 +120,7 @@
 		6785C9392C2158F9003298DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6785C93B2C21718F003298DC /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		6785C93F2C21A00C003298DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		6785C9412C21BB84003298DC /* KeywordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,12 +211,12 @@
 			isa = PBXGroup;
 			children = (
 				6785C8A32C1F208E003298DC /* TimerStartView.swift */,
-				6785C8A72C1F20B5003298DC /* TimerEndView.swift */,
 				6785C8AF2C1F5664003298DC /* NumberButton.swift */,
 				6785C8B12C1F5685003298DC /* PlusNumberButton.swift */,
 				6785C8B32C1F569A003298DC /* TimeFieldView.swift */,
 				6785C9052C206A33003298DC /* CircleTimerView.swift */,
 				6785C9332C209DA4003298DC /* CooKooView.swift */,
+				6785C9412C21BB84003298DC /* KeywordButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -436,7 +436,7 @@
 				6785C8B42C1F569A003298DC /* TimeFieldView.swift in Sources */,
 				6785C9082C2071FE003298DC /* TimeField.swift in Sources */,
 				6785C93C2C21718F003298DC /* TimeInterval.swift in Sources */,
-				6785C8A82C1F20B5003298DC /* TimerEndView.swift in Sources */,
+				6785C9422C21BB84003298DC /* KeywordButton.swift in Sources */,
 				6785C9062C206A33003298DC /* CircleTimerView.swift in Sources */,
 				6785C9012C205609003298DC /* TimerButtonStyle.swift in Sources */,
 				6785C8892C1F19B6003298DC /* ContentView.swift in Sources */,

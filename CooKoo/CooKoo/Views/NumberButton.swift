@@ -15,10 +15,10 @@ struct NumberButton: View {
     var body: some View {
         Button(action: action) {
             Text(number)
-                .padding()
-                .frame(width: 80, height: 50)
-                .foregroundColor(.black)
-                .cornerRadius(25)
+                .padding(10)
+                .font(.system(size: 23))
+                .frame(width: 80, height: 20)
+                .foregroundColor(Color("CooKooBlack"))
         }
         .padding()
     }

@@ -17,6 +17,8 @@ extension Color {
     
     static var semiBlackColor: Color = Color("CooKooSemiBlack")
     
+    static var grayColor: Color = Color("CooKooGray")
+    
     //static var cooKooBlack: Color = Color(uiColor: UIColor(named: "CooKooBlack")!)
 
     static var primaryColor: Color = Color(uiColor: UIColor.systemMint)

@@ -10,62 +10,89 @@ import Combine
 import ActivityKit
 
 struct TimerStartView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var startTime = Date()
     @Binding var selectedKeyword: Keyword
     @Binding var totalTime: TimeInterval //고정 값 total duration
     @State var duration: TimeInterval
     @State var progress = 1.0
     @State var interval = TimeInterval()
-    
+
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+
     @State private var isTimerRunning = false
-    
+
     @State private var isTimesUp = false
-    
+
     @State var activity: Activity<TimerAttributes>?
-    
+
     var body: some View {
         VStack {
-            Spacer()
+            Divider()
+                .foregroundColor(Color("CooKooBlack"))
+                .padding(.bottom,10)
+
             if(!isTimesUp){
                 CircleTimerView(progress: $progress, duration: $duration, selectedKeyword: $selectedKeyword)
             } else {
                 CooKooView()
             }
             Spacer()
-            
-            HStack(spacing: 24) {
-                Button(action: {
-                    startTimer()
-                }) {
-                    if(!isTimesUp){
-                        Text("Start")
-                            .padding()
-                            .background(Color.green)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                            .padding(.horizontal)
-                    }
-                }
-                //.disabled(isTimerRunning)
-                
-                Button(action: {
-                    stopTimer()
-                }) {
-                    if(!isTimesUp){
-                        Text("Stop")
-                            .padding()
-                            .background(Color.red)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                            .padding(.horizontal)
-                    }
 
+            if(!isTimesUp){
+                HStack(spacing: 24) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                            Text("Back")
+                                .font(.title2)
+                                .frame(width: 148, height: 60)
+                                .background(Color("AccentColor"))
+                                .foregroundColor(Color("CooKooWhite"))
+                                .cornerRadius(12)
+
+                    }
+                    .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
+                    Button(action: {
+                        if isTimerRunning {
+                            stopTimer()
+                        } else {
+                            // TODO: - 여기 동작 이상함
+                            //restartTimer()
+                        }
+                    }) {
+                            Text(isTimerRunning ? "Stop" : "Restart")
+                                .font(.title2)
+                                .frame(width: 148, height: 60)
+                                .background(Color("AccentColor"))
+                                .foregroundColor(Color("CooKooWhite"))
+                                .cornerRadius(12)
+                    }
+                    .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
+                    
                 }
             }
-            .padding(.top, 20)
+
+            else {
+                Button(action: {
+                    // TODO: - 방금 돌렸던 시간 다시 타이머 시작하도록 구현해야함
+                    startTimer()
+                }) {
+                    Text("Start Again")
+                        .font(.title2)
+                        .frame(width: 350, height: 60)
+                        .background(Color("AccentColor"))
+                        .foregroundColor(Color("CooKooWhite"))
+                        .cornerRadius(12)
+                }
+                .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
+            }
+            Spacer()
         }
+        .padding(.horizontal, 16)
+        .padding(.bottom, 16)
+        .background(Color.background)
         .onAppear {
             duration = totalTime
             startTimer()
@@ -82,7 +109,7 @@ struct TimerStartView: View {
                         sendNotification()
                     }
                     isTimesUp = true
-                    
+
                 } else {
                     guard let id = activity?.id else { return }
                     LiveActivityManager().updateActivity(
@@ -94,29 +121,35 @@ struct TimerStartView: View {
             }
         }
     }
-    
+
     func startTimer() {
         startTime = Date()
         activity = LiveActivityManager().startActivity(duration: duration, progress: progress)
-        isTimerRunning.toggle()
+        isTimerRunning = true
         duration = totalTime
         resetTimer()
     }
-    
+
     func stopTimer() {
         isTimerRunning.toggle()
         timer.upstream.connect().cancel()
         LiveActivityManager().endActivity()
     }
-    
+
     func resetTimer() {
         duration = totalTime
         progress = 1.0
     }
+
+//    func restartTimer() {
+//        activity = LiveActivityManager().startActivity(duration: duration, progress: progress)
+//        isTimerRunning = true
+//    }
+
     func sendNotification() {
         let content = UNMutableNotificationContent()
         content.title = "Coo-Koo!"
-        
+
         // selectedKeyword에 따라 다른 문구 설정
         switch selectedKeyword {
         case .cook:
@@ -128,15 +161,15 @@ struct TimerStartView: View {
         case .laundry:
             content.body = "Laundry is done!"
         }
-        
+
         content.sound = UNNotificationSound.defaultRingtone
-        
+
         // MARK: 커스텀 들어가는 부분
         content.categoryIdentifier = "customNotificationCategory"
-        
+
         // 트리거: 0초 후에 알림 발송
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-        
+
         // 요청 생성
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
 

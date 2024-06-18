@@ -93,7 +93,7 @@ struct CooKooWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: TimerAttributes.self) { context in
             LiveActivityContent(state: context.state)
-                //.activityBackgroundTint(Color.liveActivityBackground.opacity(0.25))
+                .activityBackgroundTint(Color("AccentColor").opacity(0.25))
                 .activitySystemActionForegroundColor(Color.primaryColor)
 
         } dynamicIsland: { context in

@@ -15,9 +15,8 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any required interface initialization here.
         
-        view.backgroundColor = UIColor.orange
+        view.backgroundColor = UIColor(named: "AccentColor")
     }
     
     func didReceive(_ notification: UNNotification) {
