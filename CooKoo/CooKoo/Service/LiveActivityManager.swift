@@ -36,7 +36,6 @@ class LiveActivityManager {
     }
 
     func updateActivity(activityID: String, duration: TimeInterval, progress: Double) {
-        print("activity 시작")
         Task {
             let contentState = TimerAttributes.ContentState(
                 duration: duration.format(using: [.minute, .second]),
@@ -51,7 +50,6 @@ class LiveActivityManager {
     }
 
     func endActivity() {
-        print("activity 끝")
         Task {
             for activity in Activity<TimerAttributes>.activities {
                 await activity.end(dismissalPolicy: .immediate)

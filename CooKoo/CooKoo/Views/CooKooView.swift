@@ -34,9 +34,11 @@ struct CooKooView: View {
                     .rotationEffect(.degrees(270.0))
                     .foregroundColor(Color("AccentColor"))
                     .frame(width: 330, height: 330)
-                Image("cookoo")
-                    .resizable()
-                    .frame(width: 200, height: 200, alignment: .center)
+                LottieView(animationFileName: "cookooLottie", loopMode: .loop, width: 50, height: 50)
+                
+//                Image("cookoo")
+//                    .resizable()
+//                    .frame(width: 200, height: 200, alignment: .center)
             }
             .padding(.vertical, 20)
         }
