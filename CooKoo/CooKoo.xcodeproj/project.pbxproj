@@ -37,7 +37,7 @@
 		6785C9192C207314003298DC /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9182C207314003298DC /* AppIntent.swift */; };
 		6785C91B2C207316003298DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6785C91A2C207316003298DC /* Assets.xcassets */; };
 		6785C91F2C207316003298DC /* CooKooWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6785C90D2C207314003298DC /* CooKooWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		6785C9242C207368003298DC /* WidgetCircleTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9232C207368003298DC /* WidgetCircleTimerView.swift */; };
+		6785C9242C207368003298DC /* WidgetProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9232C207368003298DC /* WidgetProgressBarView.swift */; };
 		6785C9262C20738D003298DC /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8ED2C1FEEB0003298DC /* LiveActivityManager.swift */; };
 		6785C9272C2073A3003298DC /* TimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8EB2C1FE460003298DC /* TimerAttributes.swift */; };
 		6785C9282C2073B1003298DC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C8AB2C1F3E10003298DC /* Color.swift */; };
@@ -49,6 +49,7 @@
 		6785C9442C220159003298DC /* Keyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C89D2C1F1FCE003298DC /* Keyword.swift */; };
 		6785C9462C220B18003298DC /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6785C9452C220B17003298DC /* sound.wav */; };
 		6785C9472C220B18003298DC /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6785C9452C220B17003298DC /* sound.wav */; };
+		6785C94A2C22BCFC003298DC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6785C9492C22BCFC003298DC /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,7 +117,7 @@
 		6785C9182C207314003298DC /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		6785C91A2C207316003298DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6785C91C2C207316003298DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6785C9232C207368003298DC /* WidgetCircleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCircleTimerView.swift; sourceTree = "<group>"; };
+		6785C9232C207368003298DC /* WidgetProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProgressBarView.swift; sourceTree = "<group>"; };
 		6785C9332C209DA4003298DC /* CooKooView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooKooView.swift; sourceTree = "<group>"; };
 		6785C9372C21585B003298DC /* CooKoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CooKoo.entitlements; sourceTree = "<group>"; };
 		6785C9382C215888003298DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6785C94A2C22BCFC003298DC /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +296,7 @@
 		6785C9112C207314003298DC /* CooKooWidget */ = {
 			isa = PBXGroup;
 			children = (
-				6785C9232C207368003298DC /* WidgetCircleTimerView.swift */,
+				6785C9232C207368003298DC /* WidgetProgressBarView.swift */,
 				6785C9122C207314003298DC /* CooKooWidgetBundle.swift */,
 				6785C9142C207314003298DC /* CooKooWidgetLiveActivity.swift */,
 				6785C9162C207314003298DC /* CooKooWidget.swift */,
@@ -324,6 +326,9 @@
 				6785C91E2C207316003298DC /* PBXTargetDependency */,
 			);
 			name = CooKoo;
+			packageProductDependencies = (
+				6785C9492C22BCFC003298DC /* Lottie */,
+			);
 			productName = CooKoo;
 			productReference = 6785C8832C1F19B6003298DC /* CooKoo.app */;
 			productType = "com.apple.product-type.application";
@@ -393,6 +398,9 @@
 				ko,
 			);
 			mainGroup = 6785C87A2C1F19B6003298DC;
+			packageReferences = (
+				6785C9482C22BCFC003298DC /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 6785C8842C1F19B6003298DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -482,7 +490,7 @@
 				6785C9132C207314003298DC /* CooKooWidgetBundle.swift in Sources */,
 				6785C9282C2073B1003298DC /* Color.swift in Sources */,
 				6785C9272C2073A3003298DC /* TimerAttributes.swift in Sources */,
-				6785C9242C207368003298DC /* WidgetCircleTimerView.swift in Sources */,
+				6785C9242C207368003298DC /* WidgetProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -856,6 +864,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6785C9482C22BCFC003298DC /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6785C9492C22BCFC003298DC /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6785C9482C22BCFC003298DC /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6785C87B2C1F19B6003298DC /* Project object */;
 }

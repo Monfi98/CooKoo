@@ -10,6 +10,10 @@ import Combine
 import ActivityKit
 import AVFoundation
 
+// for Lottie 
+import Lottie
+import UIKit
+
 struct TimerStartView: View {
     @Environment(\.presentationMode) var presentationMode
     
@@ -45,7 +49,9 @@ struct TimerStartView: View {
             if(!isTimesUp){
                 HStack(spacing: 24) {
                     Button(action: {
+                        timer.upstream.connect().cancel()
                         presentationMode.wrappedValue.dismiss()
+                        LiveActivityManager().endActivity()
                     }) {
                             Text("Back")
                                 .font(.title2)
@@ -127,6 +133,7 @@ struct TimerStartView: View {
     }
 
     func startTimer() {
+        LiveActivityManager().endActivity()
         startTime = Date()
         activity = LiveActivityManager().startActivity(duration: duration, progress: progress)
         isTimerRunning = true

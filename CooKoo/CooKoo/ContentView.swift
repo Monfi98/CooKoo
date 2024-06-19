@@ -165,6 +165,10 @@ struct ContentView: View {
                     // 총 시간 0 일 때는 비활성화
                     .disabled(totalTime == 0)
                     .font(Font.headline)
+                    .onAppear(){
+                        print("야호")
+                        LiveActivityManager().endActivity()
+                    }
                     .navigationDestination(isPresented: $shouldNavigate) {
                         TimerStartView(selectedKeyword: $selectedKeyword, totalTime: $totalTime, duration: duration)
                     }

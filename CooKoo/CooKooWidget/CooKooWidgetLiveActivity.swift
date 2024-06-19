@@ -14,66 +14,44 @@ struct LiveActivityContent: View {
     let state: TimerAttributes.ContentState
     
     var body: some View {
-        HStack {
-            // MARK: - 동그란 원
-//            Button {
-//                //TODO: End the activity
-//            } label: {
-//                Label("Stop", systemImage: "stop.circle")
-//                    .font(.body.bold())
-//                    .foregroundColor(Color("CooKooBlack"))
-//            }
-//            .foregroundColor(Color.backgroundColor)
-//            //.background(Material.thinMaterial)
-//            .background(Color("Background"))
-//            .clipShape(Capsule())
-//            .padding(.horizontal)
-//            .padding(.vertical, 8)
-//            .transition(.identity)
-            
-            Image("cookoo")
-                .resizable()
-                .frame(width: 100, height: 90)
-                .padding(.leading, 5)
-                .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
-            
-            Spacer()
-            VStack {
-                Text("CooKoo")
-                    .padding()
-                    .font(.headline)
-                    .minimumScaleFactor(0.8)
-                    .contentTransition(.numericText())
-                    .foregroundColor(Color("AccentColor"))
-                Text(state.duration)
-                    .padding()
-                    .font(Font.system(size: 40, weight: .bold))
-                    .minimumScaleFactor(0.8)
-                    .contentTransition(.numericText())
+        VStack(spacing: 10){
+            HStack {
+                Image("liveIcon")
+                    .resizable()
+                    .frame(width: 65, height: 65)
+                    .padding(.leading, 5)
+                    .aspectRatio(contentMode: .fit)
+                    .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
+                Spacer()
+                VStack(alignment: .trailing) {
+                    Text("Coo-Koo")
+                        .font(.headline)
+                        .minimumScaleFactor(0.8)
+                        .foregroundColor(Color("AccentColor"))
+                    Text(state.duration)
+                        .font(Font.system(size: 40, weight: .semibold))
+                        .minimumScaleFactor(0.8)
+                        .font(.largeTitle.monospacedDigit())
+                        .contentTransition(.numericText())
+                        .foregroundColor(Color("CooKooBlack"))
+                }
+                .padding(.trailing, 10)
             }
-            .padding(.trailing, 20)
             
-            
-            //            HStack(alignment: .center, spacing: 16) {
-            //                WidgetCircleTimerView(
-            //                    progress: state.progress,
-            //                    duration: state.duration
-            //                )
-            //
-            //                Text(state.duration)
-            //                    .foregroundStyle(Color.primaryColor)
-            //                    .font(.largeTitle.monospacedDigit())
-            //                    .minimumScaleFactor(0.8)
-            //                    .contentTransition(.numericText())
-            //                .animation(.spring(response: 0.2), value: state.progress)
-            //            }
-            
+            HStack(alignment: .center) {
+                WidgetProgressBarView(
+                    progress: state.progress,
+                    duration: state.duration
+                )
+            }
+            .frame(height: 30)
         }
         .id(state)
-        .transition(.identity)
+        .transition(.opacity)
         .padding()
-        .background(Color("Background").opacity(0.5))
-        .foregroundColor(Color("AccentColor"))
+        .background(Color("Background").opacity(0.8))
+        .foregroundColor(Color("Background"))
+
     }
 }
 
@@ -81,31 +59,40 @@ struct LiveActivityContent: View {
 @DynamicIslandExpandedContentBuilder
 private func expandedContent(state: TimerAttributes.ContentState) -> DynamicIslandExpandedContent<some View> {
     DynamicIslandExpandedRegion(.leading) {
-        Image(systemName: "timer.circle.fill")
+        Image("smallcookoo")
             .resizable()
-            .frame(width: 40.0, height: 40.0)
-            .foregroundColor(Color("AccentColor"))
-            .padding(.vertical, 20)
-            .padding(.leading, 20)
+            .frame(width: 65, height: 60)
+            .padding(.leading, 5)
+            .aspectRatio(contentMode: .fit)
+            .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
     }
     DynamicIslandExpandedRegion(.trailing) {
-        VStack {
-                Text("CooKoo")
-                    .font(.headline)
-                    .minimumScaleFactor(0.8)
-                    .contentTransition(.numericText())
-                    .foregroundColor(Color("AccentColor"))
-                    .padding(.bottom, 0.5)
-
+        VStack(alignment: .trailing) {
+            Text("Coo-Koo")
+                .font(.caption)
+                .minimumScaleFactor(0.5)
+                .foregroundColor(Color("AccentColor"))
             Text(state.duration)
-                .font(Font.system(size: 40, weight: .bold))
-                .minimumScaleFactor(0.8)
+                .font(Font.system(size: 40, weight: .semibold))
+                .minimumScaleFactor(0.5)
+                .font(.largeTitle.monospacedDigit())
                 .contentTransition(.numericText())
+                .foregroundColor(Color("CooKooWhite"))
+        }
+        .padding(.trailing, 5)
+        .id(state)
+        .transition(.identity)
+    }
+    DynamicIslandExpandedRegion(.bottom) {
+        HStack(alignment: .center) {
+            WidgetProgressBarView(
+                progress: state.progress,
+                duration: state.duration
+            )
         }
         .id(state)
         .transition(.identity)
-        .padding(.vertical, 20)
-        .padding(.trailing, 10)
+        .frame(height: 50)
     }
 }
 
@@ -114,7 +101,7 @@ struct CooKooWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: TimerAttributes.self) { context in
             LiveActivityContent(state: context.state)
-                .activityBackgroundTint(Color("AccentColor"))
+                .activityBackgroundTint(Color("CooKooWhite"))
                 .activitySystemActionForegroundColor(Color("AccentColor"))
             
         } dynamicIsland: { context in
@@ -161,7 +148,7 @@ extension TimerAttributes {
     CooKooWidgetLiveActivity()
 }
 contentStates: {
-    TimerAttributes.ContentState(duration: "2:41", progress: 0.80)
+    TimerAttributes.ContentState(duration: "22:02:41", progress: 0.80)
 }
 
 
@@ -169,7 +156,7 @@ contentStates: {
     CooKooWidgetLiveActivity()
 }
 contentStates: {
-    TimerAttributes.ContentState(duration: "2:41", progress: 0.80)
+    TimerAttributes.ContentState(duration: "22:02:41", progress: 0.80)
 }
 
 
@@ -177,12 +164,12 @@ contentStates: {
     CooKooWidgetLiveActivity()
 }
 contentStates: {
-    TimerAttributes.ContentState(duration: "2:41", progress: 0.80)
+    TimerAttributes.ContentState(duration: "22:02:41", progress: 0.80)
 }
 
 #Preview("Minimal", as: .dynamicIsland(.minimal), using: TimerAttributes.preview) {
     CooKooWidgetLiveActivity()
 }
 contentStates: {
-    TimerAttributes.ContentState(duration: "2:41", progress: 0.80)
+    TimerAttributes.ContentState(duration: "22:02:41", progress: 0.80)
 }
