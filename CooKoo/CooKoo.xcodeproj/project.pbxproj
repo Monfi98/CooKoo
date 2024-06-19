@@ -232,10 +232,10 @@
 			children = (
 				6785C8A32C1F208E003298DC /* TimerStartView.swift */,
 				6785C8AF2C1F5664003298DC /* NumberButton.swift */,
+				6785C9332C209DA4003298DC /* CooKooView.swift */,
 				6785C8B12C1F5685003298DC /* PlusNumberButton.swift */,
 				6785C8B32C1F569A003298DC /* TimeFieldView.swift */,
 				6785C9052C206A33003298DC /* CircleTimerView.swift */,
-				6785C9332C209DA4003298DC /* CooKooView.swift */,
 				6785C9412C21BB84003298DC /* KeywordButton.swift */,
 				6785C94B2C22BE52003298DC /* LottieView.swift */,
 			);
