@@ -173,6 +173,8 @@ struct TimerStartView: View {
     func sendNotification() {
         let content = UNMutableNotificationContent()
         content.title = "Coo-Koo!"
+        // MARK: 커스텀 들어가는 부분
+        content.categoryIdentifier = "customNotificationCategory"
 
         // selectedKeyword에 따라 다른 문구 설정
         switch selectedKeyword {
@@ -188,14 +190,15 @@ struct TimerStartView: View {
 
         content.sound = UNNotificationSound.defaultRingtone
 
-        // MARK: 커스텀 들어가는 부분
-        content.categoryIdentifier = "customNotificationCategory"
+        
 
         // 트리거: 0초 후에 알림 발송
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
 
         // 요청 생성
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        // 커스텀
+//        let request = UNNotificationRequest(identifier: "customNotificationCategory", content: content, trigger: trigger)
 
         // 요청을 알림 센터에 추가
         UNUserNotificationCenter.current().add(request) { error in

@@ -57,6 +57,9 @@
 		6785C9552C22C32C003298DC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6785C9542C22C32C003298DC /* Lottie */; };
 		6785C95A2C22CB6A003298DC /* cookooLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 6785C9592C22CB6A003298DC /* cookooLottie.json */; };
 		6785C95B2C22CB6A003298DC /* cookooLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 6785C9592C22CB6A003298DC /* cookooLottie.json */; };
+		6785C95E2C230E71003298DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6785C91A2C207316003298DC /* Assets.xcassets */; };
+		6785C95F2C230EB9003298DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6785C88A2C1F19B7003298DC /* Assets.xcassets */; };
+		6785C9602C230EBA003298DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6785C88A2C1F19B7003298DC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -448,6 +451,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6785C8E02C1FE25A003298DC /* Base in Resources */,
+				6785C95E2C230E71003298DC /* Assets.xcassets in Resources */,
+				6785C95F2C230EB9003298DC /* Assets.xcassets in Resources */,
 				6785C9472C220B18003298DC /* sound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6785C91B2C207316003298DC /* Assets.xcassets in Resources */,
+				6785C9602C230EBA003298DC /* Assets.xcassets in Resources */,
 				6785C95B2C22CB6A003298DC /* cookooLottie.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

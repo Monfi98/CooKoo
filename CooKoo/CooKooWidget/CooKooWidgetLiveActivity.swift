@@ -59,12 +59,12 @@ struct LiveActivityContent: View {
 @DynamicIslandExpandedContentBuilder
 private func expandedContent(state: TimerAttributes.ContentState) -> DynamicIslandExpandedContent<some View> {
     DynamicIslandExpandedRegion(.leading) {
-        Image("smallcookoo")
+        Image("liveIcon")
             .resizable()
-            .frame(width: 65, height: 60)
+            .frame(width: 60, height: 60)
             .padding(.leading, 5)
             .aspectRatio(contentMode: .fit)
-            .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
+            .shadow(color: Color.white.opacity(0.12), radius: 6, x: 0, y: 2)
     }
     DynamicIslandExpandedRegion(.trailing) {
         VStack(alignment: .trailing) {

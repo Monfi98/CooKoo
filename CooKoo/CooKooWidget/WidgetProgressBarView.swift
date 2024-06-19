@@ -17,8 +17,8 @@ struct WidgetProgressBarView: View {
             // 배경 바
             Rectangle()
                 .frame(width: 300, height: 12)
-                .opacity(0.08)
-                .foregroundColor(.black)
+                .opacity(0.6)
+                .foregroundColor(Color("CooKooGray"))
                 .cornerRadius(12)
                 .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 2)
 

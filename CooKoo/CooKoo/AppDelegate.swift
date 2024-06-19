@@ -20,14 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //MARK: - 커스텀 notification을 위한 부분
         // 알림 액션 설정
-        let doneAction = UNNotificationAction(identifier: "doneAction", title: "Done", options: [.foreground])
+        let doneAction = UNNotificationAction(identifier: "doneAction", title: "Done", options: [.destructive]) // 빨간색으로 뜸 + 알림 사라짐
         let restartAction = UNNotificationAction(identifier: "restartAction", title: "Restart", options: [.foreground])
         
         // 알림 카테고리 설정
         let customCategory = UNNotificationCategory(identifier: "customNotificationCategory",
-                                                    actions: [doneAction, restartAction],
+                                                    actions: [restartAction, doneAction],
                                                     intentIdentifiers: [],
-                                                    options: [])
+                                                    options: [.customDismissAction])
         
         // 카테고리 등록
         center.setNotificationCategories([customCategory])
@@ -46,9 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
+
+}
+
+// 앱이 foreground에 있을 때 푸시 알림 호출
+extension AppDelegate: UNUserNotificationCenterDelegate {
     // 알림 수신 시 호출
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound])
+        completionHandler([.banner, .sound, .badge, .list])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -62,25 +67,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         completionHandler()
     }
-    
-    
-    
-    //    // 원격 알림 등록 성공 시 호출
-    //    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    //        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-    //        let token = tokenParts.joined()
-    //        print("Device Token: \(token)")
-    //    }
-    //
-    //    // 원격 알림 등록 실패 시 호출
-    //    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-    //        print("Failed to register for remote notifications: \(error)")
-    //    }
-}
-
-// 앱이 foreground에 있을 때 푸시 알림 호출
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    //    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-    //        completionHandler([.sound, .badge, .banner])
-    //    }
 }

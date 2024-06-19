@@ -10,17 +10,25 @@ import SwiftUI
 import Combine
 
 struct CooKooView: View {
-
+    @State private var scale: CGFloat = 0.1
+    @State private var fontSize = 10.0
+    
     var body: some View {
+        
         VStack(alignment:.center, spacing: 30){
             Text("Coo - Koo !")
                 .padding(.top, 35)
                 .padding(.bottom, 20)
                 //.font(.largeTitle)
-                .font(Font.system(size: 35, weight: .heavy))
+                .font(Font.system(size: fontSize, weight: .heavy))
                 .tracking(2) // 자간
                 .foregroundStyle(Color("AccentColor"))
                 .contentTransition(.numericText())
+                .onAppear(){
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 1).repeatCount(1)) {
+                        fontSize = 35.0
+                    }
+                }
             ZStack {
                 Circle()
                     .stroke(lineWidth: 20)
@@ -34,11 +42,15 @@ struct CooKooView: View {
                     .rotationEffect(.degrees(270.0))
                     .foregroundColor(Color("AccentColor"))
                     .frame(width: 330, height: 330)
-                LottieView(animationFileName: "cookooLottie", loopMode: .loop, width: 50, height: 50)
                 
-//                Image("cookoo")
-//                    .resizable()
-//                    .frame(width: 200, height: 200, alignment: .center)
+                LottieView(loopMode: .loop, jsonName: "cookooLottie")
+                    .frame(width: 330, height: 330)
+                    .scaleEffect(scale)
+                    .onAppear {
+                        withAnimation(.easeInOut(duration: 1.0)) {
+                            scale = 0.33
+                        }
+                    }
             }
             .padding(.vertical, 20)
         }

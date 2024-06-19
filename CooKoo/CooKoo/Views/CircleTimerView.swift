@@ -22,7 +22,6 @@ struct CircleTimerView: View {
                 .padding(.bottom, 20)
                 //.font(.largeTitle)
                 .font(Font.system(size: 35, weight: .bold))
-                .fontWeight(.bold)
                 .tracking(4) // 자간
                 .foregroundStyle(Color("CooKooBlack"))
                 .contentTransition(.numericText())
