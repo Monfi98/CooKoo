@@ -16,7 +16,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(named: "AccentColor")
+        //view.backgroundColor = UIColor(named: "AccentColor")
     }
     
     func didReceive(_ notification: UNNotification) {
@@ -24,6 +24,6 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         let content = notification.request.content
         
         // 예: 알림 내용을 레이블에 표시
-         myLabel.text = content.body
+         //myLabel.text = content.body
     }
 }

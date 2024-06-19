@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-enum Keyword: String, CaseIterable {
+enum Keyword: String, CaseIterable, Codable, Hashable {
     case exercise = "exercise"
     case cook = "cook"
     case study = "study"

@@ -19,7 +19,7 @@ struct CooKooView: View {
                 //.font(.largeTitle)
                 .font(Font.system(size: 35, weight: .heavy))
                 .tracking(2) // 자간
-                .foregroundStyle(Color("CooKooBlack"))
+                .foregroundStyle(Color("AccentColor"))
                 .contentTransition(.numericText())
             ZStack {
                 Circle()

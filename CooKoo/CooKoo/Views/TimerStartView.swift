@@ -8,6 +8,11 @@
 import SwiftUI
 import Combine
 import ActivityKit
+import AVFoundation
+
+// for Lottie 
+import Lottie
+import UIKit
 
 struct TimerStartView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -26,7 +31,8 @@ struct TimerStartView: View {
     @State private var isTimesUp = false
 
     @State var activity: Activity<TimerAttributes>?
-
+    @State var player: AVAudioPlayer?
+    
     var body: some View {
         VStack {
             Divider()
@@ -43,7 +49,9 @@ struct TimerStartView: View {
             if(!isTimesUp){
                 HStack(spacing: 24) {
                     Button(action: {
+                        timer.upstream.connect().cancel()
                         presentationMode.wrappedValue.dismiss()
+                        LiveActivityManager().endActivity()
                     }) {
                             Text("Back")
                                 .font(.title2)
@@ -96,6 +104,7 @@ struct TimerStartView: View {
         .onAppear {
             duration = totalTime
             startTimer()
+            setupAudio()
         }
         .onReceive(timer) { time in
             if (isTimerRunning) {
@@ -107,6 +116,7 @@ struct TimerStartView: View {
                     resetTimer()
                     if(!isTimesUp){
                         sendNotification()
+                        playSound()
                     }
                     isTimesUp = true
 
@@ -123,6 +133,7 @@ struct TimerStartView: View {
     }
 
     func startTimer() {
+        LiveActivityManager().endActivity()
         startTime = Date()
         activity = LiveActivityManager().startActivity(duration: duration, progress: progress)
         isTimerRunning = true
@@ -139,13 +150,30 @@ struct TimerStartView: View {
     func resetTimer() {
         duration = totalTime
         progress = 1.0
+        //LiveActivityManager().endActivity()
     }
 
 //    func restartTimer() {
 //        activity = LiveActivityManager().startActivity(duration: duration, progress: progress)
 //        isTimerRunning = true
 //    }
+    func setupAudio() {
+        guard let soundURL = Bundle.main.url(forResource: "sound", withExtension: "wav") else {
+            fatalError("Sound file not found")
+        }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: soundURL)
+            player?.prepareToPlay()
+        } catch {
+            print("Error loading sound file: \(error.localizedDescription)")
+        }
+    }
 
+    func playSound() {
+        player?.play()
+    }
+    
     func sendNotification() {
         let content = UNMutableNotificationContent()
         content.title = "Coo-Koo!"
@@ -179,5 +207,6 @@ struct TimerStartView: View {
                 print("Error adding notification: \(error)")
             }
         }
+        LiveActivityManager().endActivity()
     }
 }
