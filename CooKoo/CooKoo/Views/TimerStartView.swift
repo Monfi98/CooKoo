@@ -10,10 +10,6 @@ import Combine
 import ActivityKit
 import AVFoundation
 
-// for Lottie 
-import Lottie
-import UIKit
-
 struct TimerStartView: View {
     @Environment(\.presentationMode) var presentationMode
     
