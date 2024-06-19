@@ -52,13 +52,11 @@
 		6785C94A2C22BCFC003298DC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6785C9492C22BCFC003298DC /* Lottie */; };
 		6785C94C2C22BE52003298DC /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C94B2C22BE52003298DC /* LottieView.swift */; };
 		6785C94D2C22BE52003298DC /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C94B2C22BE52003298DC /* LottieView.swift */; };
-		6785C94F2C22C14C003298DC /* animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6785C94E2C22C14C003298DC /* animation.json */; };
-		6785C9502C22C14C003298DC /* animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6785C94E2C22C14C003298DC /* animation.json */; };
 		6785C9512C22C2DC003298DC /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C94B2C22BE52003298DC /* LottieView.swift */; };
 		6785C9532C22C326003298DC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6785C9522C22C326003298DC /* Lottie */; };
 		6785C9552C22C32C003298DC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6785C9542C22C32C003298DC /* Lottie */; };
-		6785C9572C22C8E6003298DC /* loti.json in Resources */ = {isa = PBXBuildFile; fileRef = 6785C9562C22C8E5003298DC /* loti.json */; };
-		6785C9582C22C8E6003298DC /* loti.json in Resources */ = {isa = PBXBuildFile; fileRef = 6785C9562C22C8E5003298DC /* loti.json */; };
+		6785C95A2C22CB6A003298DC /* cookooLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 6785C9592C22CB6A003298DC /* cookooLottie.json */; };
+		6785C95B2C22CB6A003298DC /* cookooLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 6785C9592C22CB6A003298DC /* cookooLottie.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,8 +134,7 @@
 		6785C9412C21BB84003298DC /* KeywordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordButton.swift; sourceTree = "<group>"; };
 		6785C9452C220B17003298DC /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 		6785C94B2C22BE52003298DC /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		6785C94E2C22C14C003298DC /* animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation.json; sourceTree = "<group>"; };
-		6785C9562C22C8E5003298DC /* loti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loti.json; sourceTree = "<group>"; };
+		6785C9592C22CB6A003298DC /* cookooLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cookooLottie.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,8 +259,7 @@
 		6785C89A2C1F1D74003298DC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6785C9562C22C8E5003298DC /* loti.json */,
-				6785C94E2C22C14C003298DC /* animation.json */,
+				6785C9592C22CB6A003298DC /* cookooLottie.json */,
 				6785C9452C220B17003298DC /* sound.wav */,
 				6785C88A2C1F19B7003298DC /* Assets.xcassets */,
 			);
@@ -440,9 +436,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6785C9572C22C8E6003298DC /* loti.json in Resources */,
 				6785C9462C220B18003298DC /* sound.wav in Resources */,
-				6785C94F2C22C14C003298DC /* animation.json in Resources */,
+				6785C95A2C22CB6A003298DC /* cookooLottie.json in Resources */,
 				6785C88E2C1F19B7003298DC /* Preview Assets.xcassets in Resources */,
 				6785C88B2C1F19B7003298DC /* Assets.xcassets in Resources */,
 			);
@@ -462,8 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6785C91B2C207316003298DC /* Assets.xcassets in Resources */,
-				6785C9502C22C14C003298DC /* animation.json in Resources */,
-				6785C9582C22C8E6003298DC /* loti.json in Resources */,
+				6785C95B2C22CB6A003298DC /* cookooLottie.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
