@@ -10,36 +10,52 @@
         <!--Notification View Controller-->
         <scene sceneID="cwh-vc-ff4">
             <objects>
-                <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="CooKooNotification" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" hidesBottomBarWhenPushed="YES" keyboardType="off" id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="CooKooNotification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="COO - KOO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="0.0" y="6" width="320" height="61"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COO - KOO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42" userLabel="myLabel">
+                                <rect key="frame" x="0.0" y="64" width="320" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OLl-Nb-ilb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cookoo" translatesAutoresizingMaskIntoConstraints="NO" id="Rzg-5J-hbJ">
+                                <rect key="frame" x="10" y="113.99999999999999" width="300" height="174.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Qme-Qm-hWW"/>
+                                    <constraint firstAttribute="width" constant="300" id="znr-in-pXe"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
                         <color key="backgroundColor" red="0.45882353186607361" green="0.74901962280273438" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" secondItem="GcN-lo-r42" secondAttribute="bottom" symbolic="YES" id="0Q0-KW-PJ6"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" symbolic="YES" id="6Vq-gs-PHe"/>
-                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" symbolic="YES" id="L8K-9R-egU"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="2BE-c3-nQJ" secondAttribute="top" symbolic="YES" id="mYS-Cv-VNx"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="trailing" secondItem="2BE-c3-nQJ" secondAttribute="trailing" id="dc7-WW-bDq"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="2BE-c3-nQJ" secondAttribute="top" constant="20" id="ini-f3-acW"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" secondItem="Rzg-5J-hbJ" secondAttribute="bottom" constant="40" id="kPv-XV-bI0"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" id="mpX-4X-teq"/>
+                            <constraint firstItem="Rzg-5J-hbJ" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="20" id="qag-GR-PzX"/>
+                            <constraint firstItem="Rzg-5J-hbJ" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="ybL-wh-AN8"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="73"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="223"/>
                     <connections>
-                        <outlet property="label" destination="GcN-lo-r42" id="lpW-cU-7IG"/>
+                        <outlet property="myLabel" destination="GcN-lo-r42" id="bKf-UQ-ULA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.29770992366412" y="-22.887323943661972"/>
+            <point key="canvasLocation" x="91.603053435114504" y="23.591549295774648"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cookoo" width="174.66667175292969" height="174.66667175292969"/>
+    </resources>
 </document>
