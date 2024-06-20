@@ -21,11 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //MARK: - 커스텀 notification을 위한 부분
         // 알림 액션 설정
         let doneAction = UNNotificationAction(identifier: "doneAction", title: "Done", options: [.destructive]) // 빨간색으로 뜸 + 알림 사라짐
-        let restartAction = UNNotificationAction(identifier: "restartAction", title: "Restart", options: [.foreground])
+        let openAction = UNNotificationAction(identifier: "openAction", title: "Open CooKoo", options: [.foreground])
         
         // 알림 카테고리 설정
         let customCategory = UNNotificationCategory(identifier: "customNotificationCategory",
-                                                    actions: [restartAction, doneAction],
+                                                    actions: [openAction, doneAction],
                                                     intentIdentifiers: [],
                                                     options: [.customDismissAction])
         
@@ -60,9 +60,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         if response.actionIdentifier == "doneAction" {
             // Done 액션 처리
             print("Done action triggered")
-        } else if response.actionIdentifier == "restartAction" {
-            // Restart 액션 처리
-            print("Restart action triggered")
+        } else if response.actionIdentifier == "openAction" {
+            // 앱 오픈 액션 처리
+            print("Open action triggered")
         }
         
         completionHandler()

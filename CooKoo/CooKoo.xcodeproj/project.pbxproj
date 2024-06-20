@@ -60,6 +60,9 @@
 		6785C95E2C230E71003298DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6785C91A2C207316003298DC /* Assets.xcassets */; };
 		6785C95F2C230EB9003298DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6785C88A2C1F19B7003298DC /* Assets.xcassets */; };
 		6785C9602C230EBA003298DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6785C88A2C1F19B7003298DC /* Assets.xcassets */; };
+		6785C9622C234B5D003298DC /* BannerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9612C234B5D003298DC /* BannerAlert.swift */; };
+		6785C9632C234B5E003298DC /* BannerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9612C234B5D003298DC /* BannerAlert.swift */; };
+		6785C9642C234B5E003298DC /* BannerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6785C9612C234B5D003298DC /* BannerAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +141,7 @@
 		6785C9452C220B17003298DC /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 		6785C94B2C22BE52003298DC /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		6785C9592C22CB6A003298DC /* cookooLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cookooLottie.json; sourceTree = "<group>"; };
+		6785C9612C234B5D003298DC /* BannerAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +242,7 @@
 				6785C9052C206A33003298DC /* CircleTimerView.swift */,
 				6785C9412C21BB84003298DC /* KeywordButton.swift */,
 				6785C94B2C22BE52003298DC /* LottieView.swift */,
+				6785C9612C234B5D003298DC /* BannerAlert.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 				6785C8B42C1F569A003298DC /* TimeFieldView.swift in Sources */,
 				6785C9082C2071FE003298DC /* TimeField.swift in Sources */,
 				6785C93C2C21718F003298DC /* TimeInterval.swift in Sources */,
+				6785C9622C234B5D003298DC /* BannerAlert.swift in Sources */,
 				6785C9422C21BB84003298DC /* KeywordButton.swift in Sources */,
 				6785C9062C206A33003298DC /* CircleTimerView.swift in Sources */,
 				6785C9012C205609003298DC /* TimerButtonStyle.swift in Sources */,
@@ -500,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6785C8DD2C1FE25A003298DC /* NotificationViewController.swift in Sources */,
+				6785C9632C234B5E003298DC /* BannerAlert.swift in Sources */,
 				6785C8F32C1FF195003298DC /* Color.swift in Sources */,
 				6785C8F52C1FF19D003298DC /* TimerAttributes.swift in Sources */,
 				6785C9512C22C2DC003298DC /* LottieView.swift in Sources */,
@@ -516,6 +523,7 @@
 				6785C9192C207314003298DC /* AppIntent.swift in Sources */,
 				6785C9262C20738D003298DC /* LiveActivityManager.swift in Sources */,
 				6785C9152C207314003298DC /* CooKooWidgetLiveActivity.swift in Sources */,
+				6785C9642C234B5E003298DC /* BannerAlert.swift in Sources */,
 				6785C9132C207314003298DC /* CooKooWidgetBundle.swift in Sources */,
 				6785C9282C2073B1003298DC /* Color.swift in Sources */,
 				6785C9272C2073A3003298DC /* TimerAttributes.swift in Sources */,
