@@ -94,6 +94,14 @@ struct ContentView: View {
                                 .padding(10)
                             TimeFieldView(field: .seconds, value: seconds, activeField: $activeField)
                         }
+                        .alert(isPresented: $showAlert) {
+                            Alert(title: Text("Oops..."),
+                                  message: Text("Enter a number less than 60"),
+                                  dismissButton: .default(
+                                    Text("OK")
+                                    )
+                            )
+                        }
                         .padding(.top,20)
                         .padding(.bottom,10)
                         
