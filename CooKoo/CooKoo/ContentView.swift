@@ -27,155 +27,160 @@ struct ContentView: View {
     
     @State var interval = TimeInterval()
     @State var totalTime: TimeInterval = 0
-
+    
     @State var duration: TimeInterval = 0
     @State var progress = 1.0
-
+    
     @State var activity: Activity<TimerAttributes>?
     
     @State private var shouldNavigate = false
     
+    @State private var showAlert = false // Alert 표시 여부를 관리하는 상태
+    
     var body: some View {
         NavigationStack {
-            VStack(alignment: .center) {
-                Text("Cookoo")
-                    .font(Font.title)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(Color.black)
-                Divider()
-                    .foregroundColor(Color("CooKooBlack"))
-                    .padding(.bottom,10)
-                
-                
-                // MARK: - 키워드 선택
-                HStack{
-                    Text("Keyword")
-                        .font(Font.title2)
-                        .fontWeight(.semibold)
+            ZStack{
+                Color.background // 배경 색깔
+                    .edgesIgnoringSafeArea(.all) // 전체 화면에 배경 색을 적용
+                VStack(alignment: .center) {
+                    Text("Cookoo")
+                        .font(Font.title)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(Color.black)
+                    Divider()
                         .foregroundColor(Color("CooKooBlack"))
-                    Spacer()
-                }
-                .padding(.bottom,5)
-                HStack{
+                        .padding(.bottom,10)
                     
-                    KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .cook, keywordImage: "frying.pan", action: {selectedKeyword = .cook}, widthValue: 40, heightValue: 28)
-                    KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .study, keywordImage: "text.book.closed.fill", action: {selectedKeyword = .study}, widthValue: 24, heightValue: 30)
                     
-                    KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .exercise, keywordImage: "figure.cooldown", action: {selectedKeyword = .exercise}, widthValue: 22, heightValue: 30)
+                    // MARK: - 키워드 선택
+                    HStack{
+                        Text("Keyword")
+                            .font(Font.title2)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color("CooKooBlack"))
+                        Spacer()
+                    }
+                    .padding(.bottom,5)
+                    HStack{
+                        
+                        KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .cook, keywordImage: "frying.pan", action: {selectedKeyword = .cook}, widthValue: 40, heightValue: 28)
+                        KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .study, keywordImage: "text.book.closed.fill", action: {selectedKeyword = .study}, widthValue: 24, heightValue: 30)
+                        
+                        KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .exercise, keywordImage: "figure.cooldown", action: {selectedKeyword = .exercise}, widthValue: 22, heightValue: 30)
+                        
+                        KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .laundry, keywordImage: "washer.fill", action: {selectedKeyword = .laundry}, widthValue: 30, heightValue: 30)
+                    }
+                    .padding(.bottom,40)
                     
-                    KeywordButton(selectedKeyword: selectedKeyword, currentKeyword: .laundry, keywordImage: "washer.fill", action: {selectedKeyword = .laundry}, widthValue: 30, heightValue: 30)
-                }
-                .padding(.bottom,40)
-                
-                // MARK: - Timer 부분
-                HStack{
-                    Text("Timer")
-                        .font(Font.title2)
-                        .fontWeight(.semibold)
+                    // MARK: - Timer 부분
+                    HStack{
+                        Text("Timer")
+                            .font(Font.title2)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color("CooKooBlack"))
+                        Spacer()
+                    }
+                    Divider()
                         .foregroundColor(Color("CooKooBlack"))
-                    Spacer()
-                }
-                Divider()
-                    .foregroundColor(Color("CooKooBlack"))
-                    .padding(.bottom,2)
-                
-                VStack{
-                    HStack {
-                        TimeFieldView(field: .hours, value: hours, activeField: $activeField)
-                        Text(":")
-                            .padding(10)
-                        TimeFieldView(field: .minutes, value: minutes, activeField: $activeField)
-                        Text(":")
-                            .padding(10)
-                        TimeFieldView(field: .seconds, value: seconds, activeField: $activeField)
-                    }
-                    .padding(.vertical,20)
+                        .padding(.bottom,2)
                     
-                    
-                    
-                    // MARK: - +1분
-                    HStack {
-                        PlusNumberButton(number: "+ 1h", action: { self.addHours(1)})
-                        PlusNumberButton(number: "+ 10m", action: { self.addMinutes(10)})
-                        PlusNumberButton(number: "+ 1m", action: { self.addMinutes(1)})
-                        PlusNumberButton(number: "+ 10s", action: { self.addSeconds(10)})
-                    }
-                    
-                    VStack(spacing: 5) {
-                        HStack(spacing: 15) {
-                            NumberButton(number: "1", action: { self.appendInput("1") })
-                            NumberButton(number: "2", action: { self.appendInput("2") })
-                            NumberButton(number: "3", action: { self.appendInput("3") })
+                    VStack{
+                        HStack {
+                            TimeFieldView(field: .hours, value: hours, activeField: $activeField)
+                            Text(":")
+                                .padding(10)
+                            TimeFieldView(field: .minutes, value: minutes, activeField: $activeField)
+                            Text(":")
+                                .padding(10)
+                            TimeFieldView(field: .seconds, value: seconds, activeField: $activeField)
+                        }
+                        .padding(.top,20)
+                        .padding(.bottom,10)
+                        
+                        // MARK: - +1분
+                        HStack {
+                            PlusNumberButton(number: "+ 1h", action: { self.addHours(1)})
+                            PlusNumberButton(number: "+ 10m", action: { self.addMinutes(10)})
+                            PlusNumberButton(number: "+ 1m", action: { self.addMinutes(1)})
+                            PlusNumberButton(number: "+ 10s", action: { self.addSeconds(10)})
                         }
                         
-                        HStack(spacing: 15) {
-                            NumberButton(number: "4", action: { self.appendInput("4") })
-                            NumberButton(number: "5", action: { self.appendInput("5") })
-                            NumberButton(number: "6", action: { self.appendInput("6") })
-                        }
-                        
-                        HStack(spacing: 15) {
-                            NumberButton(number: "7", action: { self.appendInput("7") })
-                            NumberButton(number: "8", action: { self.appendInput("8") })
-                            NumberButton(number: "9", action: { self.appendInput("9") })
-                        }
-                        
-                        HStack(spacing: 15) {
-                            Button(action: {
-                                resetAll()
-                            }) {
-                                Text("reset")
-                                    .padding(8)
-                                    .font(.system(size: 23))
-                                    .frame(width: 80, height: 30)
-                                    .foregroundColor(Color("CooKooBlack"))
-
+                        VStack(spacing: 5) {
+                            HStack(spacing: 15) {
+                                NumberButton(number: "1", action: { self.appendInput("1") })
+                                NumberButton(number: "2", action: { self.appendInput("2") })
+                                NumberButton(number: "3", action: { self.appendInput("3") })
                             }
-                            .padding()
-                            NumberButton(number: "0", action: { self.appendInput("0") })
-                            Button(action: {
-                                eraseInput()
-                            }) {
-                                Image(systemName: "delete.backward")
-                                    .padding(8)
-                                    .font(.system(size: 23))
-                                    .frame(width: 80, height: 30)
-                                    .foregroundColor(Color("CooKooBlack"))
+                            
+                            HStack(spacing: 15) {
+                                NumberButton(number: "4", action: { self.appendInput("4") })
+                                NumberButton(number: "5", action: { self.appendInput("5") })
+                                NumberButton(number: "6", action: { self.appendInput("6") })
                             }
-                            .padding()
+                            
+                            HStack(spacing: 15) {
+                                NumberButton(number: "7", action: { self.appendInput("7") })
+                                NumberButton(number: "8", action: { self.appendInput("8") })
+                                NumberButton(number: "9", action: { self.appendInput("9") })
+                            }
+                            
+                            HStack(spacing: 15) {
+                                Button(action: {
+                                    resetAll()
+                                }) {
+                                    Text("reset")
+                                        .padding(8)
+                                        .font(.system(size: 23))
+                                        .frame(width: 80, height: 30)
+                                        .foregroundColor(Color("CooKooBlack"))
+                                    
+                                }
+                                .padding()
+                                NumberButton(number: "0", action: { self.appendInput("0") })
+                                Button(action: {
+                                    eraseInput()
+                                }) {
+                                    Image(systemName: "delete.backward")
+                                        .padding(8)
+                                        .font(.system(size: 23))
+                                        .frame(width: 80, height: 30)
+                                        .foregroundColor(Color("CooKooBlack"))
+                                }
+                                .padding()
+                            }
+                        }
+                        .padding(.top, 15)
+                        .padding(.bottom, 5)
+                        
+                        
+                        // MARK: - timerstart button
+                        Button(action: {
+                            totalTime = calculateTotalTime()
+                            shouldNavigate = true
+                        }, label: {
+                            Text("Start")
+                                .font(.title2)
+                                .frame(width: 350, height: 60)
+                                .background(Color("AccentColor"))
+                                .foregroundColor(Color("CooKooWhite"))
+                                .cornerRadius(12)
+                                .opacity(totalTime == 0 ? 0.5 : 1.0)
+                        })
+                        // 총 시간 0 일 때는 비활성화
+                        .disabled(totalTime == 0)
+                        .font(Font.headline)
+                        .onAppear(){
+                            LiveActivityManager().endActivity()
+                        }
+                        .navigationDestination(isPresented: $shouldNavigate) {
+                            TimerStartView(selectedKeyword: $selectedKeyword, totalTime: $totalTime, duration: duration)
                         }
                     }
-                    .padding(.top, 15)
-                    .padding(.bottom, 5)
-                    
-                    
-                    // MARK: - timerstart button
-                    Button(action: {
-                        totalTime = calculateTotalTime()
-                        shouldNavigate = true
-                    }, label: {
-                        Text("Start")
-                            .font(.title2)
-                            .frame(width: 350, height: 60)
-                            .background(Color("AccentColor"))
-                            .foregroundColor(Color("CooKooWhite"))
-                            .cornerRadius(12)
-                            .opacity(totalTime == 0 ? 0.5 : 1.0)
-                    })
-                    // 총 시간 0 일 때는 비활성화
-                    .disabled(totalTime == 0)
-                    .font(Font.headline)
-                    .onAppear(){
-                        print("야호")
-                        LiveActivityManager().endActivity()
-                    }
-                    .navigationDestination(isPresented: $shouldNavigate) {
-                        TimerStartView(selectedKeyword: $selectedKeyword, totalTime: $totalTime, duration: duration)
-                    }
+                    .background(Color.background)
                 }
+                .padding(16)
+                .background(Color.background)
             }
-            .padding(16)
-            .background(Color.background)
         }
     }
     
@@ -202,6 +207,8 @@ struct ContentView: View {
             if let value = Int(inputValue), value <= 59 {
                 minutes = value
                 inputMinutes = inputValue
+            } else {
+                showAlert = true
             }
             normalizeTime()
         case .seconds:
@@ -209,6 +216,8 @@ struct ContentView: View {
             if let value = Int(inputValue), value <= 59 {
                 seconds = value
                 inputSeconds = inputValue
+            } else {
+                showAlert = true
             }
             normalizeTime()
         case .none:
@@ -229,7 +238,7 @@ struct ContentView: View {
             seconds = 0
             inputSeconds = ""
         case .none:
-            print("dd")
+            print("None")
         }
         inputValue = ""
         normalizeTime()
@@ -310,7 +319,7 @@ struct ContentView: View {
         minutes = max(0, min(minutes, 59))
         totalTime = calculateTotalTime()
     }
-
+    
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

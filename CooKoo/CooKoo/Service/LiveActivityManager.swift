@@ -44,7 +44,6 @@ class LiveActivityManager {
             
             if let activity = Activity<TimerAttributes>.activities.first(where: { $0.id == activityID }) {
                 await activity.update(using: contentState)
-                print(activityID)
             }
         }
     }
@@ -53,7 +52,6 @@ class LiveActivityManager {
         Task {
             for activity in Activity<TimerAttributes>.activities {
                 await activity.end(dismissalPolicy: .immediate)
-                print(activity.id)
             }
         }
     }
